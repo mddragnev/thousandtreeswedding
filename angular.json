@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "thousandtreeswedding"
+  "defaultProject": "thousandtreeswedding",
+  "cli": {
+    "analytics": false
+  }
 }
