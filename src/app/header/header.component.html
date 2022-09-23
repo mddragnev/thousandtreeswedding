@@ -1,0 +1,59 @@
+<div class="backdrop" [ngClass]="{'open': isOpen}" (click)="closeMobileNav()"></div>
+
+<header>
+    <div class="main-header__menu">
+        <a (click)="openMobileNav()">
+            <span class="material-symbols-outlined">
+                menu
+            </span>
+        </a>
+    </div>
+    <div class="test">
+
+    </div>
+</header>
+<nav class="mobile-nav" [ngClass]="{'open': isOpen}">
+    <ul>
+        <li>
+            <a>
+                Начало
+            </a>
+        </li>
+        <li>
+            <a>
+                Програма
+            </a>
+        </li>
+        <li>
+            <a>
+                Потвърди
+            </a>
+        </li>
+        <li><a>
+                За каузата
+            </a>
+        </li>
+        <li>
+            <a>
+                За мястото
+            </a>
+
+        </li>
+        <li>
+            <a>
+                Полезно
+            </a>
+
+        </li>
+        <li>
+            <a>
+                Кумове и шафери
+            </a>
+        </li>
+        <li>
+            <a>
+                Контакти
+            </a>
+        </li>
+    </ul>
+</nav>
