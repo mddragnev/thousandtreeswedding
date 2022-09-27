@@ -1,4 +1,4 @@
-<div class="backdrop" [ngClass]="{'open': isOpen}" (click)="closeMobileNav()"></div>
+<div class="backdrop" [ngClass]="{'open__backdrop': isOpen}" (click)="closeMobileNav()"></div>
 
 <header>
     <div class="main-header__menu">
@@ -8,51 +8,22 @@
             </span>
         </a>
     </div>
-    <div class="test">
-
+    <div class="main-header__slogan" *ngIf="!isOpen">
+        A Thounsand Trees Wedding
+    </div>
+    <div class="main-header__logo">
     </div>
 </header>
-<nav class="mobile-nav" [ngClass]="{'open': isOpen}">
-    <ul>
-        <li>
+<nav class="mobile-nav" [ngClass]="{'open__menu': isOpen}">
+    <div class="mobile-nav__container--slogan">
+        <span>
+            A Thounsand Trees Wedding
+        </span>
+    </div>
+    <ul class="mobile-nav__list">
+        <li class="mobile-nav__list--item" *ngFor="let item of mobileNavItems">
             <a>
-                Начало
-            </a>
-        </li>
-        <li>
-            <a>
-                Програма
-            </a>
-        </li>
-        <li>
-            <a>
-                Потвърди
-            </a>
-        </li>
-        <li><a>
-                За каузата
-            </a>
-        </li>
-        <li>
-            <a>
-                За мястото
-            </a>
-
-        </li>
-        <li>
-            <a>
-                Полезно
-            </a>
-
-        </li>
-        <li>
-            <a>
-                Кумове и шафери
-            </a>
-        </li>
-        <li>
-            <a>
-                Контакти
+                {{item}}
             </a>
         </li>
     </ul>

@@ -8,6 +8,7 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   public isOpen = false;
+  public mobileNavItems = ["НАЧАЛО", "ПРОГРАМА", "ПОТВЪРЖДЕНИЕ", "ЗА КАУЗАТА", "ЗА МЯСТОТО", "ПОЛЕЗНА ИНФОРМАЦИЯ", "КУМОВЕ И ШАФЕРИ", "КОНТАКТИ"]
 
   constructor() { }
 
