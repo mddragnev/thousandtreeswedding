@@ -1,6 +1,19 @@
+@use 'igniteui-angular/theming' as *;
+@forward 'igniteui-angular/theming';
+
 $colors: (
     primary: #f4978f,
     secondary: #fbb8bc,
     primary-darker: #DA725F,
     primary-font-color: #9b7179
 );
+
+$custom-palette: palette($primary: red,
+        $secondary: #72da67,
+        $grays: #fff,
+        $surface: #333,
+);
+$palette: $custom-palette;
+$schema: $light-material-schema;
+
+$default-palette: $palette;

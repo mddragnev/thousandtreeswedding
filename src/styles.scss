@@ -1,4 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'igniteui-angular/theming' as *;
+@use '../src/styles/index' as *;
+
+
+
+@include core();
+@include typography();
+@include theme($palette: $palette,
+    $schema: $schema);
+
+:root {
+    @include palette-vars($palette);
+}
+
 
 * {
     box-sizing: border-box;
@@ -6,4 +20,7 @@
 
 body {
     margin: 0;
+    font-family: "baskerville-urw", serif;
+    font-weight: 400;
+    font-style: normal;
 }

@@ -1,0 +1,37 @@
+<div class="countdown">
+    <div class="countdown__slogan">
+        A Thounsand Trees Wedding
+    </div>
+    <h2 class="countdown__date">15 ЮЛИ 2023</h2>
+
+    <div class="countdown__timer">
+        <igx-circular-bar [value]="this.percent" [animate]="true" class="countdown__timer--item">
+            <ng-template igxProcessBarText let-process>
+                <svg:tspan x="54" y="3.5rem" [ngClass]="'countdown__timer--item-time'"> {{daysToDday}} </svg:tspan>
+                <svg:tspan [ngClass]="'countdown__timer--item-label'" x="50" dy="1.2rem">
+                    ДНИ
+                </svg:tspan>
+            </ng-template>
+        </igx-circular-bar>
+        <igx-circular-bar [value]="this.percent" [animate]="true" class="countdown__timer--item">
+            <ng-template igxProcessBarText let-process>
+                <svg:tspan x="54" y="3.5rem" [ngClass]="'countdown__timer--item-time'"> {{hoursToDday}} </svg:tspan>
+                <svg:tspan [ngClass]="'countdown__timer--item-label'" x="50" dy="1.2rem">
+                    ЧАСА
+                </svg:tspan>
+            </ng-template>
+        </igx-circular-bar>
+        <igx-circular-bar [value]="this.percent" [animate]="true" class="countdown__timer--item">
+            <ng-template igxProcessBarText let-process>
+                <svg:tspan x="54" y="3.5rem" [ngClass]="'countdown__timer--item-time'"> {{minutesToDday}} </svg:tspan>
+                <svg:tspan [ngClass]="'countdown__timer--item-label'" x="50" dy="1.2rem">
+                    МИН
+                </svg:tspan>
+            </ng-template>
+        </igx-circular-bar>
+    </div>
+
+    <div class="countdown__text">
+        До Сватбата На Силвана и Радослав
+    </div>
+</div>

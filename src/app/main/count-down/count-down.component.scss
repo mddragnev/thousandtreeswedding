@@ -1,0 +1,55 @@
+.countdown {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1rem;
+
+    &__slogan {
+        font-family: "bickham-script-pro-3", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 3.5rem;
+        line-height: 2.5rem;
+        text-align: center;
+        max-width: 460px;
+    }
+
+    &__timer {
+        display: flex;
+        gap: 1rem;
+
+        &--item {
+            width: 5rem;
+            height: 5rem;
+
+            &-time {
+                font-size: 2rem;
+                fill: white;
+            }
+
+            &-label {
+                font-size: 0.8rem;
+                fill: white;
+            }
+        }
+    }
+
+    &__text {
+        margin-top: 1rem;
+    }
+}
+
+// :host {
+//     ::ng-deep {
+//         .igx-circular-bar__inner {
+//             stroke-width: 0.40rem;
+//         }
+//         .igx-circular-bar__outer {
+//             stroke-width: 0.40rem;
+//         }
+//     }
+// }
