@@ -10,6 +10,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { IgxProgressBarModule } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     HeaderComponent,
     MainComponent,
     HomeSectionComponent,
-    CountDownComponent
+    CountDownComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

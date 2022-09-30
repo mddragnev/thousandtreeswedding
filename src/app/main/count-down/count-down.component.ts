@@ -29,7 +29,7 @@ export class CountDownComponent implements OnInit {
     const start = new Date('September 28 2022');
     const q = Math.abs(this.dateNow.getTime() - start.getTime());
     const d = Math.abs(this.dDay.getTime() - start.getTime());
-    this.percent = Math.round((q/d)*100);
+    this.percent = Math.min(100, Math.round((q / d) * 100));
     this.timeDifference = this.dDay.getTime() - new Date().getTime();
     this.allocateTimeUnits(this.timeDifference);
   }
