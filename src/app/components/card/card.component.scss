@@ -1,0 +1,26 @@
+@use '../../../styles/index' as *;
+
+
+.card__container--holder {
+    padding: 1rem;
+}
+
+
+.card__content {
+    padding: 1rem;
+    border: 3px solid map-get($map: $colors, $key: primary-font-color);
+    border-radius: 1rem;
+    text-align: center;
+
+    & span {
+        white-space: pre-wrap;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        display: inline-block;
+
+        font-family: montserrat, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+
+    }
+}

@@ -3,7 +3,17 @@
         <app-count-down></app-count-down>
     </section>
     <section>
-        <app-carousel [images]="images" [autoSlide]="false"></app-carousel>
-
+        <app-carousel [autoSlide]="false" [cards]="true" [texts]="texts" [controls]="false">
+        </app-carousel>
     </section>
+
+    <section>
+        <app-timeline></app-timeline>
+    </section>
+
+    <section>
+        <app-form></app-form>
+    </section>
+
+    <div>test</div>
 </main>

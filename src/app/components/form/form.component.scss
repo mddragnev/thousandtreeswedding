@@ -1,0 +1,83 @@
+@use '../../../styles/index' as *;
+
+.form__container {
+    padding: 1.5rem 1.2rem 1.5rem 1.2rem;
+    background: map-get($map: $colors, $key: primary-font-color );
+    box-shadow: 0 -8px 12px 0px #b1b9b9;
+
+    &--content {
+        background: white;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & h2,h3 {
+            text-align: center;
+        }
+
+        & h2 {
+            color: map-get($map: $colors, $key: primary-darker);
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+    }
+
+    &--date {
+        & h3 {
+            color: map-get($map: $colors, $key: primary);
+            font-size: 1rem;
+            margin: 0;
+        }
+        margin: 0.5rem;
+    }
+}
+
+.form {
+    display: grid;
+    padding: 1rem;
+    grid-row-gap: 0.5rem;
+
+    & label {
+        
+    }
+}
+
+.form__radio {
+    & igx-radio {
+        color: black;
+    }
+}
+
+.form__inputs--buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    & button {
+        margin: 0.5rem;
+    }
+}
+
+.form__inputs--phone {
+   margin-top: 1rem;
+}
+
+.form__button--submit {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    
+    & button {
+        flex-grow: 1;
+    }
+}
+
+.igx-button--fab {
+    height: 30px;
+    width: 30px;
+    min-width: 2rem;
+    min-height: 2rem;
+}
+
+.igx-button--disabled {
+    background: var(--disabled-background);
+}

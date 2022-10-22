@@ -1,0 +1,67 @@
+<div class="form__container">
+    <div class="form__container--content">
+
+        <h2>Скъпи гости, моля потвърдете Вашето присъствие като попълните нашата сватбена форма.</h2>
+        <div class="form__container--date">
+            <h3>Дата на събитието: </h3>
+            <h3>15 Юли 2023 г.</h3>
+        </div>
+        <div class="form__container--date">
+            <h3>Крайна дата за потвърждение: </h3>
+            <h3>30 Април 2023 г.</h3>
+        </div>
+
+        <form class="form" id="form" #form="ngForm">
+            <label for="attendance">Ще присъствате ли на сватбеното тържество на Силвана и Радослав?</label>
+            <div class="form__radio">
+                <igx-radio [(ngModel)]="attendance" [value]='"true"' name="attendance-yes">Да, с удоволствие ще
+                    присъстваме.
+                </igx-radio>
+            </div>
+            <div class="form__radio">
+                <igx-radio [(ngModel)]="attendance" [value]='"false"' name="attendance-no">Не, за съжаление няма да
+                    присъстваме.</igx-radio>
+            </div>
+
+            <div *ngIf="attendance === 'false'">
+                <span>Няма да присъстват:</span>
+                <section *ngFor="let input of inputs; let i = index">
+                    <igx-input-group>
+                        <input igxInput name="firstName{{i}}" type="text" [(ngModel)]="input.firstName"
+                            required="required" />
+                        <label igxLabel for="firstName{{i}}">Име</label>
+                    </igx-input-group>
+
+                    <igx-input-group>
+                        <input igxInput name="secondName{{i}}" type="text" [(ngModel)]="input.secondName"
+                            required="required" />
+                        <label igxLabel for="secondName{{i}}">Фамилия</label>
+                    </igx-input-group>
+
+                </section>
+                <div class="form__inputs--buttons">
+                    <button igxButton="fab" (click)="addRow()">
+                        <igx-icon>add</igx-icon>
+                    </button>
+                    <button igxButton="fab" (click)="removeRow()" [disabled]="this.inputs.length <= 1">
+                        <igx-icon>remove</igx-icon>
+                    </button>
+                </div>
+
+                <div class="form__inputs--phone">
+                    <igx-input-group>
+                        <input igxInput name="phone" type="text" [(ngModel)]="phone"
+                        required="required" />
+                        <label igxLabel for="phone">Телефон за връзка</label>
+                    </igx-input-group>
+                </div>
+                <!-- <button igxButton="raised" (click)="addRow()">Допълнителен ред</button> -->
+            </div>
+            <div class="form__button--submit">
+                <button igxButton="outlined" type="submit" [disabled]="!form['valid']">Изпрати</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>

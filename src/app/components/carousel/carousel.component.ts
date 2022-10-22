@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ContentChildren, Input, OnInit, QueryList } from '@angular/core';
 import { interval } from 'rxjs';
+import { CardComponent } from '../card/card.component';
 
 interface carouselImages {
   imageSrc: string;
@@ -18,6 +19,10 @@ export class CarouselComponent implements OnInit {
   @Input() controls = true;
   @Input() autoSlide = false;
   @Input() sliderInterval = 3000;
+  @Input() cards = false;
+  @Input() texts: string[] = [];
+
+  // @ContentChildren(CardComponent) cardItems!: QueryList<CardComponent>;
 
   public selectedIndex = 0;
 
@@ -35,14 +40,14 @@ export class CarouselComponent implements OnInit {
 
   public onPrevClick(): void {
     if (this.selectedIndex === 0) {
-      this.selectedIndex = this.images.length - 1;
+      this.selectedIndex = this.images.length > 0 ? this.images.length - 1 : this.texts.length - 1;
     } else {
       this.selectedIndex--;
     }
   }
 
   public onNextClick(): void {
-    if (this.selectedIndex === this.images.length - 1) {
+    if (this.selectedIndex === this.images.length - 1 || this.selectedIndex === this.texts.length - 1) {
       this.selectedIndex = 0;
     }
     else {

@@ -1,9 +1,17 @@
-<div *ngIf="images && images.length > 0" class="carousel-container">
+<div *ngIf="images && images.length > 0 || cards" class="carousel-container" (swipeleft)="onNextClick()" (swiperight)="onPrevClick()">
     <img *ngFor="let img of images; let i=index" src="{{img.imageSrc}}" alt="img.imageAlt"
         [ngClass]="{'image-active': selectedIndex === i}" class="fade">
 
-    <div *ngIf="indicators" class="carousel-dot-container">
+    <app-card *ngFor="let t of texts let i=index" [text]="t" [ngClass]="{'image-active': selectedIndex === i}"></app-card>
+
+    <div *ngIf="indicators && images.length > 0" class="carousel-dot-container">
         <span *ngFor="let dot of images; let i=index" class="dot" [ngClass]="{'active': selectedIndex === i}"
+            (click)="selectImage(i)">
+        </span>
+    </div>
+
+    <div *ngIf="indicators && texts.length > 0" class="carousel-dot-container">
+        <span *ngFor="let dot of texts; let i=index" class="dot-cards" [ngClass]="{'active': selectedIndex === i}"
             (click)="selectImage(i)">
         </span>
     </div>
