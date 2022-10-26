@@ -19,8 +19,8 @@
     </div>
     <ul class="mobile-nav__list">
         <li class="mobile-nav__list--item" *ngFor="let item of mobileNavItems">
-            <a>
-                {{item}}
+            <a href="{{item.link}}" (click)="closeMobileNav()">
+                {{item.name}}
             </a>
         </li>
     </ul>

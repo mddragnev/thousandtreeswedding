@@ -1,0 +1,14 @@
+<igx-grid #grid [data]="data" width="100%">
+    <igx-column field="group" header="Номер" width="100px" ></igx-column>
+    <igx-column field="attending" header="Присъствие" width="100px" >
+    </igx-column>
+    <igx-column field="firstName" header="Име" width="150px" ></igx-column>
+    <igx-column field="secondName" header="Фамилия" width="150px" ></igx-column>
+    <igx-column field="phone" header="Телефон" width="150px" ></igx-column>
+    <igx-column field="age" header="Години" width="150px" ></igx-column>
+    <igx-column field="food" header="Храна" width="250px" ></igx-column>
+    <igx-column field="alergies" header="Алергии" width="150px" ></igx-column>
+    <igx-column field="info" header="Друго" width="150px" ></igx-column>
+</igx-grid>
+
+<button igxButton="raised" (click)="exportExcel()">Export to Excel</button>

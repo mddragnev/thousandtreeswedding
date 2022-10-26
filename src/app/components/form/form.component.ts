@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { PeopleService } from 'src/app/services/people.service';
 
 @Component({
   selector: 'app-form',
@@ -8,20 +9,38 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
-  public attendance: string = 'false';
+  private _attendance: string = '';
+  public info!: string;
 
   public inputs: any = [
     {
       firstName: '',
-      secondName: ''
+      secondName: '',
+      food: '',
+      allergies: ''
     }
   ];
+
+  public get attendance(): string {
+    return this._attendance;
+  }
+
+  public set attendance(val: string) {
+    this._attendance = val;
+    this.inputs = [{
+      firstName: '',
+      secondName: '',
+      food: '',
+      allergies: '',
+      age: 'Възрастен'
+    }];
+  }
 
   public phone!: string;
 
   public form!: FormGroup;
 
-  constructor(private fb:FormBuilder) { 
+  constructor(private service: PeopleService) {
   }
 
   ngOnInit(): void {
@@ -30,13 +49,17 @@ export class FormComponent implements OnInit {
   public addRow() {
     this.inputs.push({
       firstName: '',
-      secondName: ''
+      secondName: '',
+      food: '',
+      allergies: '',
+      age: 'Възрастен'
     });
   }
 
   public removeRow() {
     this.inputs.pop();
   }
+
 
 
 }

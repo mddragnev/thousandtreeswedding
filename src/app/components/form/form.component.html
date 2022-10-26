@@ -1,7 +1,7 @@
 <div class="form__container">
     <div class="form__container--content">
 
-        <h2>Скъпи гости, моля потвърдете Вашето присъствие като попълните нашата сватбена форма.</h2>
+        <h2>Скъпи гости, моля потвърдете вашето присъствие като попълните нашата сватбена форма.</h2>
         <div class="form__container--date">
             <h3>Дата на събитието: </h3>
             <h3>15 Юли 2023 г.</h3>
@@ -26,6 +26,8 @@
             <div *ngIf="attendance === 'false'">
                 <span>Няма да присъстват:</span>
                 <section *ngFor="let input of inputs; let i = index">
+                    <div *ngIf="this.inputs.length > 1 && i !==0" class="form__inputs--divider"></div>
+
                     <igx-input-group>
                         <input igxInput name="firstName{{i}}" type="text" [(ngModel)]="input.firstName"
                             required="required" />
@@ -50,15 +52,98 @@
 
                 <div class="form__inputs--phone">
                     <igx-input-group>
-                        <input igxInput name="phone" type="text" [(ngModel)]="phone"
-                        required="required" />
+                        <input igxInput name="phone" type="text" [(ngModel)]="phone" required="required" />
                         <label igxLabel for="phone">Телефон за връзка</label>
                     </igx-input-group>
                 </div>
                 <!-- <button igxButton="raised" (click)="addRow()">Допълнителен ред</button> -->
             </div>
+
+            <div *ngIf="attendance === 'true'">
+                <span>Ще присъстват:</span>
+
+
+                <section *ngFor="let input of inputs; let i = index">
+                    <div *ngIf="this.inputs.length > 1 && i !== 0" class="form__inputs--divider"></div>
+
+                    <div class="form__inputs--select">
+                        <igx-select #select [(ngModel)]="input.age" name="age{{i}}">
+                            <igx-select-item [value]="'Възрастен'">
+                                Възрастен
+                            </igx-select-item>
+                            <igx-select-item [value]="'Дете'">
+                                Дете
+                            </igx-select-item>
+                        </igx-select>
+                    </div>
+                    <igx-input-group>
+                        <input igxInput name="firstName{{i}}" type="text" [(ngModel)]="input.firstName"
+                            required="required" />
+                        <label igxLabel for="firstName{{i}}">Име</label>
+                    </igx-input-group>
+
+                    <igx-input-group>
+                        <input igxInput name="secondName{{i}}" type="text" [(ngModel)]="input.secondName"
+                            required="required" />
+                        <label igxLabel for="secondName{{i}}">Фамилия</label>
+                    </igx-input-group>
+
+                    <div class="form__food">
+
+                        <span> Специфични изисквания за храна: </span>
+                        <div class="form__food--radio">
+                            <div *ngIf="input.age === 'Възрастен'" class="form__food--radio-container">
+                                <igx-radio [(ngModel)]="input.food" value='Нямам специфични изисквания'
+                                    name="food-all{{i}}">
+                                    Нямам специфични изисквания</igx-radio>
+                                <igx-radio [(ngModel)]="input.food" value='Вегетарианско меню' name="food-vegan{{i}}">
+                                    Вегетарианско меню</igx-radio>
+                            </div>
+                            <div *ngIf="input.age === 'Дете'" class="form__food--radio-container">
+                                <igx-radio [(ngModel)]="input.food" value='Детско меню' name="food-child{{i}}">
+                                    Детско меню</igx-radio>
+                                <igx-radio [(ngModel)]="input.food" value='Меню за възрастен'
+                                    name="food-child-person{{i}}">
+                                    Меню за възрастен</igx-radio>
+                                <igx-radio [(ngModel)]="input.food" value='Вегетарианско меню'
+                                    name="food-vegan-child{{i}}">
+                                    Вегетарианско меню</igx-radio>
+                                <igx-radio [(ngModel)]="input.food" value='Без меню' name="food-child-nomenu{{i}}">
+                                    Без меню</igx-radio>
+                            </div>
+
+                            <igx-input-group>
+                                <input igxInput name="secondName{{i}}" type="text" [(ngModel)]="input.allergies" />
+                                <label igxLabel for="secondName{{i}}">Алергии към храни</label>
+                            </igx-input-group>
+                        </div>
+
+                    </div>
+                </section>
+                <div class="form__inputs--buttons">
+                    <button igxButton="fab" (click)="addRow()">
+                        <igx-icon>add</igx-icon>
+                    </button>
+                    <button igxButton="fab" (click)="removeRow()" [disabled]="this.inputs.length <= 1">
+                        <igx-icon>remove</igx-icon>
+                    </button>
+                </div>
+
+                <div class="form__inputs--phone">
+                    <igx-input-group>
+                        <input igxInput name="phone" type="text" [(ngModel)]="phone" required="required" />
+                        <label igxLabel for="phone">Телефон за връзка</label>
+                    </igx-input-group>
+                </div>
+
+                <igx-input-group class="form__inputs--info">
+                    <label igxLabel for="additional-information">Друго</label>
+
+                    <textarea igxInput name="additional-information" rows=”5” [(ngModel)]="info"></textarea>
+                </igx-input-group>
+            </div>
             <div class="form__button--submit">
-                <button igxButton="outlined" type="submit" [disabled]="!form['valid']">Изпрати</button>
+                <button igxButton="outlined" type="submit" [disabled]="!form['valid'] || this.attendance === ''">Изпрати</button>
             </div>
 
         </form>

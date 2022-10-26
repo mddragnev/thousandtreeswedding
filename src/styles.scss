@@ -46,9 +46,16 @@ $custom-theme-progress: progress-circular-theme(
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
     font-family: "baskerville-display-pt", serif;
     font-weight: 400;
     font-style: normal;
+    background: white;
+    height: 100%;
+    width: 100%;
 }

@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +7,44 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  private shouldHide = false;
+  private scrollDelta = 20;
   public isOpen = false;
-  public mobileNavItems = ["НАЧАЛО", "ПРОГРАМА", "ПОТВЪРЖДЕНИЕ", "ЗА КАУЗАТА", "ЗА МЯСТОТО", "ПОЛЕЗНА ИНФОРМАЦИЯ", "КУМОВЕ И ШАФЕРИ", "КОНТАКТИ"]
+  private lastScroll = window.scrollY;
+  public mobileNavItems = [
+    {
+      name: "НАЧАЛО",
+      link: "#home"
+    },
+    {
+      name: "ПРОГРАМА",
+      link: "#program"
+    },
+    {
+      name: "ПОТВЪРЖДЕНИЕ",
+      link: "#form"
+    },
+    {
+      name: "ЗА КАУЗАТА",
+      link: "#cause"
+    },
+    {
+      name: "ЗА МЯСТОТО",
+      link: "#place"
+    },
+    {
+      name: "ПОЛЕЗНА ИНФОРМАЦИЯ",
+      link: "#info"
+    },
+    {
+      name: "КУМОВЕ И ШАФЕРИ",
+      link: "#ppl"
+    },
+    {
+      name: "КОНТАКТИ",
+      link: "contancts"
+    }
+  ];
 
   constructor() { }
 
@@ -17,10 +53,29 @@ export class HeaderComponent implements OnInit {
 
   public openMobileNav() {
     this.isOpen = true;
+    document.body.style['overflow'] = 'hidden';
   }
 
   public closeMobileNav() {
     this.isOpen = false;
+    document.body.style['overflow'] = 'visible';
+  }
+
+  @HostBinding('class.mobile-nav__hidden')
+  public get hidden() {
+    return this.shouldHide;
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  public onWindowScroll(event: any) {
+    if (this.lastScroll < window.scrollY) {
+      // console.log("down");
+      this.shouldHide = true;
+    } else {
+      // console.log("up");
+      this.shouldHide = false;
+    }
+    this.lastScroll = window.scrollY;
   }
 
 }

@@ -1,5 +1,17 @@
 @use '../../styles/index' as *;
 
+:host {
+    z-index: 60;
+    position: fixed;
+    width: 100%;
+    background: white;
+    transition: transform 0.2s;
+}
+
+:host(.mobile-nav__hidden) {
+    transform: translateY(-4rem);
+}
+
 .backdrop {
     position: fixed;
     visibility: hidden;
@@ -7,8 +19,8 @@
     top: 0;
     left: 0;
     z-index: 99;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.5);
     transition: opacity 0.5s ease-out;
 }
@@ -17,13 +29,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 
 .main-header__menu {
     margin-left: 0.5rem;
 
-    & > a > span {
+    &>a>span {
         font-size: 2rem;
     }
 }
@@ -93,8 +106,12 @@ header {
             & a {
                 display: inline-block;
                 margin-bottom: 0.2rem;
+                text-decoration: none;
                 color: map-get($colors, primary-font-color);
 
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
 
