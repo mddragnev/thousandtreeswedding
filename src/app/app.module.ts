@@ -6,7 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { HomeSectionComponent } from './main/home-section/home-section.component';
 import { CountDownComponent } from './main/count-down/count-down.component';
-import { IgxButtonModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxSelectModule } from 'igniteui-angular';
+import { IgxButtonModule, IgxCardModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxSelectModule } from 'igniteui-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CarouselComponent } from './components/carousel/carousel.component';
@@ -21,6 +21,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import {getAuth, provideAuth} from '@angular/fire/auth'
 import { environment } from 'src/environments/environment.prod';
 import { LandingComponent } from './components/landing/landing.component';
+import { CauseComponent } from './components/cause/cause.component';
 
 
 
@@ -56,6 +57,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     FormComponent,
     GridComponent,
     LandingComponent,
+    CauseComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,23 @@
+@use '../../../styles/index' as *;
+
+.cause__container {
+    width: 90%;
+    margin: 1rem auto;
+}
+
+.cause__header {
+    font-family: "montserrat", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.cause__content--image {
+    & img {
+        width: 80%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
