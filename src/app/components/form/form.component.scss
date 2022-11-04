@@ -70,10 +70,14 @@
 }
 
 .form__inputs--select {
-    width: 50%;
+    margin: 0.5rem 0;
+
+    & igx-radio:nth-child(2) {
+        margin: 0 1rem;
+    }
 }
 
-.form__inputs--info{
+.form__inputs--info {
     margin-top: 0.5rem;
 }
 

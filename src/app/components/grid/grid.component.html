@@ -1,14 +1,32 @@
-<igx-grid #grid [data]="data" width="100%">
-    <igx-column field="group" header="Номер" width="100px" ></igx-column>
-    <igx-column field="attending" header="Присъствие" width="100px" >
-    </igx-column>
-    <igx-column field="firstName" header="Име" width="150px" ></igx-column>
-    <igx-column field="secondName" header="Фамилия" width="150px" ></igx-column>
-    <igx-column field="phone" header="Телефон" width="150px" ></igx-column>
-    <igx-column field="age" header="Години" width="150px" ></igx-column>
-    <igx-column field="food" header="Храна" width="250px" ></igx-column>
-    <igx-column field="alergies" header="Алергии" width="150px" ></igx-column>
-    <igx-column field="info" header="Друго" width="150px" ></igx-column>
-</igx-grid>
+<div *ngIf="!isLogged">
+    <form #form="ngForm" (ngSubmit)="this.formSubmit()">
+        <igx-input-group>
+            <input igxInput name="user" type="email" [(ngModel)]="username"
+                required="required" />
+            <label igxLabel for="user">email</label>
+        </igx-input-group>
 
-<button igxButton="raised" (click)="exportExcel()">Export to Excel</button>
+        <igx-input-group>
+            <input igxInput name="password" type="password" [(ngModel)]="password"
+                required="required" />
+            <label igxLabel for="password">password</label>
+        </igx-input-group>
+        <button igxButton="raised">Login</button>
+    </form>
+</div>
+<div *ngIf="isLogged">
+    <igx-grid #grid [data]="data" width="100%" height="500px" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+        <igx-column field="group" header="Номер" width="150px" [hasSummary]="true" [sortable]="true"></igx-column>
+        <igx-column field="attendance" header="Присъствие" width="150px" dataType="boolean" [hasSummary]="true" [summaries]="summary">
+        </igx-column>
+        <igx-column field="firstName" header="Име" width="150px" ></igx-column>
+        <igx-column field="secondName" header="Фамилия" width="150px" ></igx-column>
+        <igx-column field="phone" header="Телефон" width="150px" ></igx-column>
+        <igx-column field="age" header="Години" width="150px" ></igx-column>
+        <igx-column field="food" header="Храна" width="250px" ></igx-column>
+        <igx-column field="allergies" header="Алергии" width="150px" ></igx-column>
+        <igx-column field="info" header="Друго" width="150px" ></igx-column>
+    </igx-grid>
+    
+    <button igxButton="raised" (click)="exportExcel()">Export to Excel</button>
+</div>

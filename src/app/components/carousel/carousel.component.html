@@ -2,7 +2,7 @@
     <img *ngFor="let img of images; let i=index" src="{{img.imageSrc}}" alt="img.imageAlt"
         [ngClass]="{'image-active': selectedIndex === i}" class="fade">
 
-    <app-card *ngFor="let t of texts let i=index" [text]="t" [ngClass]="{'image-active': selectedIndex === i}"></app-card>
+    <app-card *ngFor="let t of texts let i=index" [text]="t"  [shouldHaveHeader]="i===1" [ngClass]="{'image-active': selectedIndex === i}"></app-card>
 
     <div *ngIf="indicators && images.length > 0" class="carousel-dot-container">
         <span *ngFor="let dot of images; let i=index" class="dot" [ngClass]="{'active': selectedIndex === i}"

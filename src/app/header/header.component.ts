@@ -68,7 +68,12 @@ export class HeaderComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   public onWindowScroll(event: any) {
-    if (this.lastScroll < window.scrollY) {
+    if (window.scrollY <= 0) {
+      this.shouldHide = false;
+      this.lastScroll = window.scrollY;
+      return;
+    }
+    if (this.lastScroll < window.scrollY && window.scrollY > 60) {
       // console.log("down");
       this.shouldHide = true;
     } else {

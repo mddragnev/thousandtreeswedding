@@ -6,6 +6,8 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+/src/environments/**
+
 
 .angular/*
 # Diagnostic reports (https://nodejs.org/api/report.html)
@@ -105,3 +107,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json

@@ -1,5 +1,7 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { atcb_init } from 'add-to-calendar-button';
+import { RadioGroupAlignment } from 'igniteui-angular';
 import { PeopleService } from 'src/app/services/people.service';
 
 @Component({
@@ -7,10 +9,12 @@ import { PeopleService } from 'src/app/services/people.service';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit, AfterViewInit {
 
   private _attendance: string = '';
-  public info!: string;
+  public alignment = RadioGroupAlignment.horizontal;
+  public info: string = '';
+  public submitted: boolean = false;
 
   public inputs: any = [
     {
@@ -46,6 +50,9 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngAfterViewInit(): void {
+  }
+
   public addRow() {
     this.inputs.push({
       firstName: '',
@@ -60,6 +67,21 @@ export class FormComponent implements OnInit {
     this.inputs.pop();
   }
 
+
+  public submit() {
+    const result = [...this.inputs];
+    result.forEach((i: any) => {
+      i['attendance'] = this.attendance === 'true';
+      i['info'] = this.info;
+      i['phone'] = this.phone;
+    });
+    this.service.save(result);
+
+    this.submitted = true;
+    setTimeout(() => {
+      atcb_init();
+    },0)
+  }
 
 
 }

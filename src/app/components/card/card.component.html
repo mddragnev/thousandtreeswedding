@@ -1,10 +1,11 @@
 <div class="card__container">
     <div class="card__container--holder">
         <div class="card__content">
+            <h3 *ngIf="shouldHaveHeader">Заедно</h3>
             <span>
                 {{text}}
             </span>
-            
+            <span *ngIf="shouldHaveHeader" class="card__content--author">Димитър Камбуров</span>
         </div>
     </div>
 </div>

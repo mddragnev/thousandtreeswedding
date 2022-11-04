@@ -1,5 +1,5 @@
 <div class="form__container">
-    <div class="form__container--content">
+    <div *ngIf="!this.submitted" class="form__container--content">
 
         <h2>Скъпи гости, моля потвърдете вашето присъствие като попълните нашата сватбена форма.</h2>
         <div class="form__container--date">
@@ -11,7 +11,7 @@
             <h3>30 Април 2023 г.</h3>
         </div>
 
-        <form class="form" id="form" #form="ngForm">
+        <form class="form" id="form" #form="ngForm" (ngSubmit)="submit()">
             <label for="attendance">Ще присъствате ли на сватбеното тържество на Силвана и Радослав?</label>
             <div class="form__radio">
                 <igx-radio [(ngModel)]="attendance" [value]='"true"' name="attendance-yes">Да, с удоволствие ще
@@ -42,10 +42,10 @@
 
                 </section>
                 <div class="form__inputs--buttons">
-                    <button igxButton="fab" (click)="addRow()">
+                    <button igxButton="fab" (click)="addRow()" type="button">
                         <igx-icon>add</igx-icon>
                     </button>
-                    <button igxButton="fab" (click)="removeRow()" [disabled]="this.inputs.length <= 1">
+                    <button igxButton="fab" (click)="removeRow()" [disabled]="this.inputs.length <= 1" type="button">
                         <igx-icon>remove</igx-icon>
                     </button>
                 </div>
@@ -67,14 +67,22 @@
                     <div *ngIf="this.inputs.length > 1 && i !== 0" class="form__inputs--divider"></div>
 
                     <div class="form__inputs--select">
-                        <igx-select #select [(ngModel)]="input.age" name="age{{i}}">
+                        <igx-radio-group name="age{{i}}" [(ngModel)]="input.age" [alignment]="alignment">
+                            <igx-radio [value]="'Възрастен'">
+                                Възрастен
+                            </igx-radio>
+                            <igx-radio [value]="'Дете'">
+                                Дете
+                            </igx-radio>
+                        </igx-radio-group>
+                        <!-- <igx-select #select [(ngModel)]="input.age" name="age{{i}}">
                             <igx-select-item [value]="'Възрастен'">
                                 Възрастен
                             </igx-select-item>
                             <igx-select-item [value]="'Дете'">
                                 Дете
                             </igx-select-item>
-                        </igx-select>
+                        </igx-select> -->
                     </div>
                     <igx-input-group>
                         <input igxInput name="firstName{{i}}" type="text" [(ngModel)]="input.firstName"
@@ -121,10 +129,10 @@
                     </div>
                 </section>
                 <div class="form__inputs--buttons">
-                    <button igxButton="fab" (click)="addRow()">
+                    <button igxButton="fab" (click)="addRow()" type="button">
                         <igx-icon>add</igx-icon>
                     </button>
-                    <button igxButton="fab" (click)="removeRow()" [disabled]="this.inputs.length <= 1">
+                    <button igxButton="fab" (click)="removeRow()" [disabled]="this.inputs.length <= 1" type="button">
                         <igx-icon>remove</igx-icon>
                     </button>
                 </div>
@@ -137,16 +145,41 @@
                 </div>
 
                 <igx-input-group class="form__inputs--info">
-                    <label igxLabel for="additional-information">Друго</label>
+                    <label igxLabel for="additional-information">Допълнителна информация</label>
 
                     <textarea igxInput name="additional-information" rows=”5” [(ngModel)]="info"></textarea>
                 </igx-input-group>
             </div>
             <div class="form__button--submit">
-                <button igxButton="outlined" type="submit" [disabled]="!form['valid'] || this.attendance === ''">Изпрати</button>
+                <button igxButton="outlined" type="submit"
+                    [disabled]="!form['valid'] || this.attendance === ''">Изпрати</button>
             </div>
 
         </form>
+    </div>
+
+    <div *ngIf="this.submitted" class="form__container--content">
+        <h2>Благодарим ви, че попълнихте формата</h2>
+        <div *ngIf="this.attendance !== 'false'" class="atcb" style="display:none;">
+            {{ '{' }}
+            "name":"Сватбата на Силвана и Радослав",
+            "description":"Сватбата на Силвана и Радослав",
+            "startDate":"2023-07-15",
+            "endDate":"2023-07-15",
+            "location":"Църква 'Свети Никола' град Златарица, област Велико Търново",
+            "label":"Добави в календар",
+            "options":[
+            "Apple",
+            "Google"
+            ],
+            "timeZone":"currentBrowser",
+            "trigger":"click",
+            "inline":true,
+            "listStyle":"modal",
+            "checkmark":false,
+            "iCalFileName":"Reminder-Event"
+            {{ '}' }}
+        </div>
     </div>
 
 </div>

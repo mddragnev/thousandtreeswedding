@@ -6,7 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { HomeSectionComponent } from './main/home-section/home-section.component';
 import { CountDownComponent } from './main/count-down/count-down.component';
-import { IgxButtonModule, IgxDropDownModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxSelectModule, IgxToggleModule } from 'igniteui-angular';
+import { IgxButtonModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxSelectModule } from 'igniteui-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CarouselComponent } from './components/carousel/carousel.component';
@@ -16,8 +16,9 @@ import { TimelineComponent } from './components/timeline/timeline.component';
 import { FormComponent } from './components/form/form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { GridComponent } from './components/grid/grid.component'
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import {getAuth, provideAuth} from '@angular/fire/auth'
 import { environment } from 'src/environments/environment.prod';
 import { LandingComponent } from './components/landing/landing.component';
 
@@ -71,7 +72,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     HammerModule,
     RouterModule.forRoot(routes),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth())
   ],
   providers: [
     {
