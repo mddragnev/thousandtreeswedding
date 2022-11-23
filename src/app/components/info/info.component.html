@@ -1,0 +1,11 @@
+<div class="info--container">
+    <div class="info--title">
+        Полезна информация
+    </div>
+
+    <div class="info--items">
+
+        <app-info-component *ngFor="let item of info" [description]='item.description' [label]="item.title"
+            [image]="item.image"></app-info-component>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &>h2 {
+        margin: 0;
+    }
+
+}
+
+.info-component--label {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+}
+
+.info-component--description {
+    padding: 1rem;
+    text-align: center;
+    margin: 0;
+}

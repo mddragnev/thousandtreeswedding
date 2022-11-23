@@ -22,6 +22,27 @@ class BooleanSummary {
   }
 }
 
+class GroupSummary {
+  public operate(data: any[], allData = [], fieldName = ''): IgxSummaryResult[] {
+    const result = [];
+    const filteredData = data.filter((value, index, self) =>
+      self.findIndex(v => v === value) === index
+    );
+    result.push({
+      key: 'Count',
+      label: 'Count',
+      summaryResult: IgxSummaryOperand.count(data)
+    },
+      {
+        key: 'Groups',
+        label: 'Groups Count',
+        summaryResult: filteredData.length
+    });
+
+    return result;
+  }
+}
+
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
@@ -34,11 +55,12 @@ export class GridComponent implements OnInit {
   public username: string = '';
   public password: string = '';
   public summary = BooleanSummary;
+  public groupSummary = GroupSummary;
 
   constructor(private service: PeopleService, private exportService: IgxExcelExporterService, private auth: AuthService) { }
 
   ngOnInit(): void {
-    
+
   }
 
   public exportExcel() {
@@ -55,7 +77,7 @@ export class GridComponent implements OnInit {
             { fieldName: "group", dir: SortingDirection.Asc }
           ];
         }
-  
+
       });
     })
       .catch((error) => {

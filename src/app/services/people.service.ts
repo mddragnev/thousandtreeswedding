@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-import { addDoc, collection, collectionData, CollectionReference, Firestore } from '@angular/fire/firestore';
-import { firstValueFrom } from 'rxjs';
+import { addDoc, collection, CollectionReference, collectionSnapshots, Firestore } from '@angular/fire/firestore';
+import { firstValueFrom, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,23 +15,26 @@ export class PeopleService {
   }
 
   public getAll(): any {
-    return collectionData(this.db, { idField: "id" });
+    return collectionSnapshots(this.db).pipe(map(res => res.map(data => {
+      const id = data.id;
+      const docData = data.data();
+      return { ...docData, id };
+    })));
   }
 
   public async save(data: any): Promise<any> {
     const response: any = await firstValueFrom(this.getAll());
-    
-    const lastPerson = response.findLast((x:any) => x.group);
-    const group = lastPerson.group + 1;
+
+    const group = Math.max(...(response.map((x: any) => x.group))) + 1;
     data.forEach((obj: any) => {
       obj['group'] = group;
       addDoc(this.db, obj)
-      .then(res => {
-      })
-      .catch(err => {
-        console.log(err);
-      });
+        .then(res => {
+        })
+        .catch(err => {
+          console.log(err);
+        });
     });
-    
+
   }
 }

@@ -1,0 +1,33 @@
+@use '../../../styles/index' as *;
+
+.people--container {
+    background: map-get($map: $colors, $key: primary-font-color);
+    padding: 1.5rem 1.2rem 1.5rem 1.2rem;
+    margin-top: 0.5rem;
+    box-shadow: 0 -8px 12px 0px #b1b9b9;
+
+}
+
+.people--title {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.people--list__items {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+    gap: 1rem;
+}
+
+.people--list__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+        width: 140px;
+    }
+}

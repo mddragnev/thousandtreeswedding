@@ -22,6 +22,11 @@ import {getAuth, provideAuth} from '@angular/fire/auth'
 import { environment } from 'src/environments/environment.prod';
 import { LandingComponent } from './components/landing/landing.component';
 import { CauseComponent } from './components/cause/cause.component';
+import { PlaceComponent } from './components/place/place.component';
+import { InfoComponent } from './components/info/info.component';
+import { InfoComponentComponent } from './components/info-component/info-component.component';
+import { PeopleComponent } from './components/people/people.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 
@@ -58,6 +63,11 @@ export class MyHammerConfig extends HammerGestureConfig {
     GridComponent,
     LandingComponent,
     CauseComponent,
+    PlaceComponent,
+    InfoComponent,
+    InfoComponentComponent,
+    PeopleComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
