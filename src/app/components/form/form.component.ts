@@ -83,5 +83,8 @@ export class FormComponent implements OnInit, AfterViewInit {
     },0)
   }
 
+  //plus - Добави следващ присъстващ.
+  //minus - Премахни последен присъстващ.
+
 
 }

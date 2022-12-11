@@ -4,14 +4,88 @@
     background: map-get($map: $colors, $key: primary-font-color);
     padding: 1.5rem 1.2rem 1.5rem 1.2rem;
     margin-top: 0.5rem;
-    box-shadow: 0 -8px 12px 0px #b1b9b9;
+    box-shadow: 0 -8px 12px 0px #b1b9b9, 0 8px 12px 0px #b1b9b9;
+    position: relative;
+    overflow: hidden;
+}
 
+.people--container__flower {
+    background-image: url(../../../assets/images/flower.png);
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.people--container__flower2 {
+    @extend .people--container__flower;
+    top: 48%;
+    transform: translateX(-50%) rotate(287deg);
+}
+
+.people--container__flower3 {
+    @extend .people--container__flower;
+    top: 75%;
+}
+
+.people--container__petno {
+    background-image: url(../../../assets/images/petno3.png);
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    transform: translateX(-40%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+}
+
+.people--container__petno2 {
+    @extend .people--container__petno;
+    left: auto;
+    right: 0;
+    transform: translateX(30%) rotate(90deg);
+}
+
+.people--container__petno3 {
+    @extend .people--container__petno;
+    top: auto;
+    bottom: 0;
+    transform: translateX(-35%) rotate(270deg);
+}
+
+.people--container__petno4 {
+    @extend .people--container__petno;
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    transform: translateX(50%) rotate(180deg);
 }
 
 .people--title {
-    margin-bottom: 2rem;
+    padding: 1rem;
     font-size: 2rem;
     text-align: center;
+    font-family: "quasimoda", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: white;
+    position: relative;
+}
+
+.people--list {
+    z-index: 10;
+    position: relative;
+    color: white;
+    margin: 3rem 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 .people--list__items {
@@ -19,6 +93,17 @@
     justify-content: space-around;
     margin: 1rem;
     gap: 1rem;
+
+    &-title {
+        line-height: 2rem;
+        font-family: "bickham-script-pro-3", sans-serif;
+        font-weight: 400;
+        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+        font-style: normal;
+        width: 100%;
+        text-align: center;
+        font-size: 3rem;
+    }
 }
 
 .people--list__item {
@@ -26,8 +111,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: "quasimoda", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 
     & img {
         width: 140px;
+        border: 5px solid white;
+        border-radius: 50%;
+        background-color: white;
+        box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.2);
     }
 }

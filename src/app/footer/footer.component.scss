@@ -1,0 +1,46 @@
+@use '../../styles/index' as *;
+
+.footer--container {
+    background: map-get($map: $colors, $key: primary-font-color);
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.footer--nav {
+    padding-top: 2rem;
+
+    &__list {
+        list-style: none;
+        padding: 1rem;
+        text-align: center;
+        line-height: 1.5rem;
+
+        &-item {
+            display: inline-block;
+            padding: 0 0.8rem;
+            font-size: 1rem;
+
+            & a {
+                text-decoration: none;
+                color: white;
+
+            }
+        }
+    }
+}
+
+.footer-bottom {
+    border-top: 1px solid #ffffff26;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center
+}
+
+.footer--info {
+    margin: 0;
+    padding: 1rem;
+
+    & a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.5)
+    }
+}

@@ -29,6 +29,10 @@ export class HeaderComponent implements OnInit {
       link: "#cause"
     },
     {
+      name: "КУМОВЕ И ШАФЕРИ",
+      link: "#ppl"
+    },
+    {
       name: "ЗА МЯСТОТО",
       link: "#place"
     },
@@ -37,12 +41,8 @@ export class HeaderComponent implements OnInit {
       link: "#info"
     },
     {
-      name: "КУМОВЕ И ШАФЕРИ",
-      link: "#ppl"
-    },
-    {
       name: "КОНТАКТИ",
-      link: "contancts"
+      link: "#contancts"
     }
   ];
 

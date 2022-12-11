@@ -27,6 +27,7 @@ import { InfoComponent } from './components/info/info.component';
 import { InfoComponentComponent } from './components/info-component/info-component.component';
 import { PeopleComponent } from './components/people/people.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -68,6 +69,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     InfoComponentComponent,
     PeopleComponent,
     ContactComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

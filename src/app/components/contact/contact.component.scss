@@ -1,0 +1,129 @@
+@use '../../../styles/index' as *;
+
+.contanct--container {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    box-shadow: 0 -3px 5px 0 rgb(0 0 0 / 20%);
+}
+
+.contact--title {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+    font-family: "quasimoda", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: map-get($map: $colors, $key: primary-font-color);
+}
+
+.contact--card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 1rem 2rem 1rem;
+    position: relative;
+    box-shadow: 0 3px 5px 3px rgb(0 0 0 / 20%);
+
+    &__left-design {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-image: url(../../../assets/images/petno1.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+
+    &__image {
+        padding-top: 1rem;
+
+        &>img {
+            height: 200px;
+            border: 5px solid map-get($map: $colors, $key: primary-font-color);
+            border-radius: 50%;
+            background-color: map-get($map: $colors, $key: primary-font-color);
+            // box-shadow: 0 3px 5px 3px #dce1e1;
+            box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    &__info {
+        margin-top: 0.5rem;
+        text-align: center;
+        width: 200px;
+        padding-bottom: 1rem;
+
+        & span {
+            display: block;
+            color: map-get($map: $colors, $key: primary-font-color);
+        }
+
+        &-name {
+            font-family: "bickham-script-pro-3", sans-serif;
+            font-weight: 400;
+            margin: 0.5rem;
+            font-style: normal;
+            line-height: 2rem;
+            font-size: 3rem;
+        }
+
+        &-phone {
+            // margin-top: 1rem;
+            font-size: 1.2rem;
+            font-family: "quasimoda", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+    }
+}
+
+.contact--card__right-design {
+    width: 100%;
+    height: 100%;
+
+    &-background {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-image: url(../../../assets/images/petno2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        bottom: 0;
+        right: 0;
+        z-index: -2;
+    }
+
+    &-branch {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-image: url(../../../assets/images/klonka1.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 70px 80px;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+    }
+}
+
+.contact--card__image-man {
+    @extend .contact--card__image;
+
+    &>img {
+
+        border: 5px solid rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+.contact--card__info-man {
+    @extend .contact--card__info;
+
+    & span {
+        color: rgba(0, 0, 0, 0.5);
+    }
+}

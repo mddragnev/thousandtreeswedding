@@ -6,11 +6,13 @@
 }
 
 .cause__header {
-    font-family: "montserrat", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 1.5rem;
+    margin: 2rem 0;
+    font-size: 2rem;
     text-align: center;
+    font-family: "quasimoda", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: map-get($map: $colors, $key: primary-font-color );
 }
 
 .cause__content--image {
