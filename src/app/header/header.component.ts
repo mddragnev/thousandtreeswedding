@@ -25,12 +25,12 @@ export class HeaderComponent implements OnInit {
       link: "#form"
     },
     {
-      name: "ЗА КАУЗАТА",
-      link: "#cause"
-    },
-    {
       name: "КУМОВЕ И ШАФЕРИ",
       link: "#ppl"
+    },
+    {
+      name: "ЗА КАУЗАТА",
+      link: "#cause"
     },
     {
       name: "ЗА МЯСТОТО",

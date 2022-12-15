@@ -3,7 +3,7 @@
 .form__container {
     padding: 1.5rem 1.2rem 1.5rem 1.2rem;
     background: map-get($map: $colors, $key: primary-font-color);
-    box-shadow: 0 -8px 12px 0px #b1b9b9;
+    box-shadow: 0 -8px 12px 0px #b1b9b9, 0 8px 12px 0px #b1b9b9;
 
     &--content {
         background: white;

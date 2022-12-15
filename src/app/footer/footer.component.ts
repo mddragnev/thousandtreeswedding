@@ -20,12 +20,12 @@ export class FooterComponent implements OnInit {
       link: "#form"
     },
     {
-      name: "За каузата",
-      link: "#cause"
-    },
-    {
       name: "Кумове и шафери",
       link: "#ppl"
+    },
+    {
+      name: "За каузата",
+      link: "#cause"
     },
     {
       name: "За мястото",

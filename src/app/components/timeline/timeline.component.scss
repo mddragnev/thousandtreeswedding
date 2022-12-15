@@ -8,15 +8,19 @@
   padding: 15px 0;
 }
 
+.timeline img {
+  width: 70px;
+  margin-bottom: 0.3rem;
+}
+
 .timeline::after {
   content: '';
   position: absolute;
   width: 2px;
   background: #006E51;
-  top: 25%;
-  bottom: 10%;
+  top: 25.2%;
+  bottom: 9%;
   left: 50%;
-  margin-left: -1px;
 }
 
 .timeline__header {

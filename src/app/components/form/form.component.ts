@@ -78,6 +78,7 @@ export class FormComponent implements OnInit, AfterViewInit {
     this.service.save(result);
 
     this.submitted = true;
+    window.location.href = window.location.origin + '#form';
     setTimeout(() => {
       atcb_init();
     },0)

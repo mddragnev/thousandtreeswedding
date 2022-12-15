@@ -3,23 +3,56 @@
 .cause__container {
     width: 90%;
     margin: 1rem auto;
-}
-
-.cause__header {
-    margin: 2rem 0;
-    font-size: 2rem;
-    text-align: center;
+    color: #085737;
     font-family: "quasimoda", sans-serif;
     font-weight: 300;
     font-style: normal;
-    color: map-get($map: $colors, $key: primary-font-color );
+}
+
+.cause__header {
+    margin: 2rem 0 1rem 0;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 400;
+
+    // color: map-get($map: $colors, $key: primary-font-color);
+
+    &-subtitle {
+        font-weight: 300;
+        font-size: 1.5rem;
+    }
 }
 
 .cause__content--image {
+    padding: 1rem;
+
     & img {
-        width: 80%;
+        box-shadow: 0 3px 5px 3px rgb(0 0 0 / 20%);
+        border-radius: 50%;
+        border: 4px solid rgba(0, 0, 0, 0.3);
+        width: 60%;
         position: relative;
         left: 50%;
         transform: translateX(-50%);
     }
+
+    & div {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 400;
+
+    }
+}
+
+.cause__content--text {
+    text-align: center;
+}
+
+.cause__content--banner {
+    & img {
+        width: 100%;
+        object-fit: contain;
+        box-shadow: 0 8px 12px 0px #b1b9b9;
+    }
+    
 }
