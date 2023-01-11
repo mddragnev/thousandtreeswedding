@@ -1,6 +1,6 @@
 <div *ngIf="images && images.length > 0 || cards" class="carousel-container" (swipeleft)="onNextClick()" (swiperight)="onPrevClick()">
     <img *ngFor="let img of images; let i=index" src="{{img.imageSrc}}" alt="img.imageAlt"
-        [ngClass]="{'image-active': selectedIndex === i}" class="fade">
+        [ngClass]="{'image-active': selectedIndex === i}" class="fade" loading="lazy">
 
     <app-card *ngFor="let t of texts let i=index" [text]="t"  [shouldHaveHeader]="i===1" [ngClass]="{'image-active': selectedIndex === i}"></app-card>
 

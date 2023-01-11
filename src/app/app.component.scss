@@ -1,6 +1,19 @@
-:host {
+@use '../styles/index' as *;
+.grid {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 3.5rem auto;
+    grid-template-rows: 4rem auto;
     height: 100%;
+
+    @include computer {
+        grid-template-rows: 5.5rem auto;
+    }
+}
+
+.show {
+    display: grid;
+}
+
+.hide {
+    display: none;
 }

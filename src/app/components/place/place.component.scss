@@ -52,13 +52,13 @@
 
 
 .place__title {
-    margin: 2rem 0;
+    margin: 1rem 0;
     font-size: 2rem;
     text-align: center;
     font-family: "quasimoda", sans-serif;
     font-weight: 300;
     font-style: normal;
-    color: map-get($map: $colors, $key: primary-font-color );
+    color: map-get($map: $colors, $key: primary-font-color);
 }
 
 .place__description {
@@ -82,6 +82,9 @@
     }
 
     &--text {
+        font-family: "quasimoda", sans-serif;
+        font-weight: 300;
+        font-style: normal;
         text-align: center;
         width: 80%;
     }

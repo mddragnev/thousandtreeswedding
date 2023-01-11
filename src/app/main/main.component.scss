@@ -1,3 +1,27 @@
 :host {
     width: 100%;
 }
+
+section {
+    position: relative;
+}
+
+section>span {
+    position: absolute;
+    left: 0;
+    height: 0;
+    width: 0;
+    top: -60px;
+}
+
+
+.form--puhche {
+    object-fit: cover;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    
+    top: -53px;
+    left: -30px;
+    transform: rotate(338deg);
+}

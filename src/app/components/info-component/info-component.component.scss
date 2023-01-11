@@ -1,13 +1,34 @@
+@use '../../../styles/index' as *;
+
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: "quasimoda", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: rgba(0, 0, 0, 0.7);
+    position: relative;
 
     &>h2 {
         margin: 0;
     }
 
+}
+
+.info-component--icon {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 5px solid rgba(0, 0, 0, 0.3);
+    background: map-get($map: $colors, $key: primary-font-color);
+    background-clip: content-box;
+    box-shadow: 0 3px 5px 3px rgb(0 0 0 / 20%);
 }
 
 .info-component--icon>img {
@@ -16,8 +37,10 @@
 
 .info-component--label {
     font-size: 1.5rem;
+    font-weight: 500;
     text-align: center;
     margin: 0;
+    padding-top: 1rem;
 }
 
 .info-component--description {

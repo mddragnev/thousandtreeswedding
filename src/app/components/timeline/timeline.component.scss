@@ -6,30 +6,39 @@
   max-width: 1140px;
   margin: 0 auto;
   padding: 15px 0;
+  font-family: "quasimoda", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+
+  &-top {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    top: -70px;
+    left: -25px;
+  }
 }
 
-.timeline img {
+.container img {
   width: 70px;
   margin-bottom: 0.3rem;
 }
 
-.timeline::after {
+.date::after {
   content: '';
   position: absolute;
   width: 2px;
-  background: #006E51;
-  top: 25.2%;
-  bottom: 9%;
+  background: rgba(0,0,0,0.7);;
+  top: 27.2%;
+  bottom: -171%;
   left: 50%;
 }
 
 .timeline__header {
   font-size: 2rem;
   text-align: center;
-  font-family: "quasimoda", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  color: map-get($map: $colors, $key: primary-font-color );
+  color: map-get($map: $colors, $key: primary-font-color);
   margin: 1rem;
 }
 
@@ -56,7 +65,7 @@
   top: calc(50% - 8px);
   right: -8px;
   background: #ffffff;
-  border: 2px solid #006E51;
+  border: 2px solid rgba(0,0,0,0.7);;
   border-radius: 16px;
   z-index: 1;
 }
@@ -72,7 +81,7 @@
   height: 2px;
   top: calc(50% - 1px);
   right: 8px;
-  background: #006E51;
+  background: rgba(0,0,0,0.7);
   z-index: 1;
 }
 
@@ -91,11 +100,14 @@
   top: calc(50% - 35px);
   text-align: center;
   font-size: 14px;
-  font-weight: bold;
-  color: #006E51;
+  font-weight: 500;
+  color: map-get($map: $colors, $key: primary-font-color);
   text-transform: uppercase;
   letter-spacing: 1px;
   z-index: 1;
+  font-family: "baskerville-display-pt", serif;
+  font-weight: 400;
+  font-style: normal;
 
   & span {
     font-size: 1.2rem;
@@ -150,10 +162,8 @@
 .container .content h2 {
   margin: 0 0 10px 0;
   font-size: 18px;
-  font-family: "baskerville-display-pt", serif;
-  font-weight: 700;
-  font-style: normal;
   color: white;
+  font-weight: 600;
 }
 
 
@@ -175,8 +185,8 @@
 }
 
 @media (max-width: 767.98px) {
-  .timeline::after {
-    left: 91px;
+  .date::after {
+    left: 80px;
   }
 
   .container {
@@ -196,8 +206,8 @@
 
   .container.left::before,
   .container.right::before {
-    left: 100px;
-    border-color: transparent #006E51 transparent transparent;
+    left: 98px;
+    border-color: transparent rgba(0,0,0,0.7) transparent transparent;
   }
 
   .container.left .date,
@@ -224,6 +234,7 @@
 
     & h2 {
       margin-top: 1rem;
+      padding-left: 1rem;
       text-align: center;
       max-width: 180px;
     }
@@ -232,15 +243,35 @@
       text-align: center;
       margin-left: 1.5rem;
       margin-bottom: 1rem;
+      color: white
     }
 
     & button {
-      --background: white;
+      --background: #f4978f;
+      // --foreground: white;
       margin-bottom: 1rem;
       margin-left: 1rem;
+      & > a {
+        color: white;
+      }
     }
 
     // padding: 30px 30px 30px 100px;
     border-radius: 500px 30px 30px 500px;
+  }
+}
+
+.igx-button--raised {
+
+  &:active {
+    --active-background: #FBB8BC;
+  }
+
+  &:focus {
+    --focus-background: #FBB8BC;
+  }
+
+  &:hover {
+    --hover-background: #FBB8BC;
   }
 }

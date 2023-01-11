@@ -1,5 +1,6 @@
 <main>
-    <section id="home">
+    <section>
+        <span id="home"></span>
         <app-landing></app-landing>
         <app-count-down></app-count-down>
     </section>
@@ -8,34 +9,51 @@
         </app-carousel>
     </section>
 
-    <section id="program">
+    <section style="z-index: 10;">
+        <span id="program"></span>
         <app-timeline></app-timeline>
     </section>
 
-    <section id="form">
-        <app-form></app-form>
-    </section>
 
-    <section id="ppl">
+    <section style="z-index: 12;">
+        <span id="ppl"></span>
         <app-people></app-people>
     </section>
 
-    <section id="cause">
+    <section style="z-index: 14">
+        <span id="cause"></span>
         <app-cause></app-cause>
     </section>
 
-    <section id="place">
+    <section>
+        <span id="place"></span>
         <app-place></app-place>
     </section>
 
 
-    <section id="info">
+    <section>
+        <span id="info"></span>
+
         <app-info></app-info>
+
+
     </section>
 
 
+    <section style="z-index: 11;">
+        <span id="form"></span>
 
-    <section id="contancts">
+        <app-form></app-form>
+
+        <!-- <div class="form--puhche"></div> -->
+        <img class="form--puhche" src="../../assets/images/tricvqta.png" loading="lazy">
+
+
+    </section>
+
+    <section>
+        <span id="contacts"></span>
+
         <app-contact></app-contact>
     </section>
 </main>

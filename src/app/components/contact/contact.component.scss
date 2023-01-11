@@ -1,9 +1,9 @@
 @use '../../../styles/index' as *;
 
 .contanct--container {
-    margin-top: 2rem;
+    // margin-top: 2rem;
     padding-top: 2rem;
-    box-shadow: 0 -3px 5px 0 rgb(0 0 0 / 20%);
+    // box-shadow: 0 -3px 5px 0 rgb(0 0 0 / 20%);
 }
 
 .contact--title {
@@ -24,14 +24,14 @@
     margin: 1rem 1rem 2rem 1rem;
     position: relative;
     box-shadow: 0 3px 5px 3px rgb(0 0 0 / 20%);
+    overflow: hidden;
+    border-radius: 1rem;
 
     &__left-design {
         position: absolute;
         width: 200px;
         height: 200px;
-        background-image: url(../../../assets/images/petno1.png);
-        background-size: contain;
-        background-repeat: no-repeat;
+        object-fit: cover;
         top: 0;
         left: 0;
         z-index: -2;
@@ -64,7 +64,7 @@
         &-name {
             font-family: "bickham-script-pro-3", sans-serif;
             font-weight: 400;
-            margin: 0.5rem;
+            margin: 0.5rem 0.5rem 0.8rem 0.5rem;
             font-style: normal;
             line-height: 2rem;
             font-size: 3rem;
@@ -93,9 +93,7 @@
         position: absolute;
         width: 200px;
         height: 200px;
-        background-image: url(../../../assets/images/petno2.png);
-        background-size: contain;
-        background-repeat: no-repeat;
+        object-fit: cover;
         bottom: 0;
         right: 0;
         z-index: -2;
@@ -105,12 +103,9 @@
         position: absolute;
         width: 200px;
         height: 200px;
-        background-image: url(../../../assets/images/klonka1.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: 70px 80px;
-        bottom: 0;
-        right: 0;
+        object-fit: cover;
+        bottom: -65px;
+        right: -65px;
         z-index: -1;
     }
 }

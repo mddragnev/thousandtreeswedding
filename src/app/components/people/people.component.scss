@@ -3,45 +3,89 @@
 .people--container {
     background: map-get($map: $colors, $key: primary-font-color);
     padding: 1.5rem 1.2rem 1.5rem 1.2rem;
-    margin-top: 3rem;
     box-shadow: 0 -8px 12px 0px #b1b9b9, 0 8px 12px 0px #b1b9b9;
     position: relative;
     overflow: hidden;
+    border-radius: 1rem;
 }
 
 .people--container__flower {
-    background-image: url(../../../assets/images/flower.png);
+    object-fit: cover;
     position: absolute;
     width: 220px;
     height: 220px;
-    background-size: contain;
-    background-repeat: no-repeat;
     top: 20%;
     left: 50%;
     transform: translateX(-50%);
+
+    @include laptop {
+        transform: translateX(-50%) rotate(329deg);
+        width: 500px;
+        height: 500px;
+        top: 35%;
+    }
+
+    @include computer {
+        width: 600px;
+        height: 600px;
+        top: 30%;
+    }
 }
 
 .people--container__flower2 {
     @extend .people--container__flower;
     top: 48%;
     transform: translateX(-50%) rotate(287deg);
+
+    @include laptop {
+        width: 400px;
+        height: 400px;
+        bottom: 0;
+        left: 0;
+        right: auto;
+        top: auto;
+        transform: translate(-100px, 150px);
+    }
+
+    @include computer {
+        width: 500px;
+        height: 500px;
+    }
 }
 
 .people--container__flower3 {
     @extend .people--container__flower;
     top: 75%;
+
+    @include laptop {
+        width: 400px;
+        height: 400px;
+        bottom: 0;
+        right: 0;
+        top: auto;
+        left: auto;
+        transform: translate(100px, 160px);
+    }
+
+    @include computer {
+        width: 500px;
+        height: 500px;
+    }
 }
 
 .people--container__petno {
-    background-image: url(../../../assets/images/petno3.png);
+    object-fit: cover;
     position: absolute;
     width: 220px;
     height: 220px;
     transform: translateX(-40%);
-    background-size: contain;
-    background-repeat: no-repeat;
     top: 0;
     left: 0;
+
+    @include computer {
+        width: 400px;
+        height: 400px;
+    }
 }
 
 .people--container__petno2 {
@@ -56,6 +100,16 @@
     top: auto;
     bottom: 0;
     transform: translateX(-35%) rotate(270deg);
+
+    @include laptop {
+        width: 400px;
+        height: 400px;
+    }
+
+    @include computer {
+        width: 500px;
+        height: 500px;
+    }
 }
 
 .people--container__petno4 {
@@ -65,6 +119,16 @@
     left: auto;
     right: 0;
     transform: translateX(50%) rotate(180deg);
+
+    @include laptop {
+        width: 400px;
+        height: 400px;
+    }
+
+    @include computer {
+        width: 500px;
+        height: 500px;
+    }
 }
 
 .people--title {
@@ -76,6 +140,12 @@
     font-style: normal;
     color: white;
     position: relative;
+
+    @include laptop {
+        font-size: 4rem;
+
+    }
+
 }
 
 .people--list {
@@ -86,11 +156,15 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
+
+    @include laptop {
+        margin-top: 5rem;
+    }
 }
 
 .people--list__items {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin: 1rem;
     gap: 1rem;
 
@@ -103,6 +177,11 @@
         width: 100%;
         text-align: center;
         font-size: 3rem;
+
+        @include laptop {
+            padding: 1rem;
+            font-size: 5rem;
+        }
     }
 }
 
@@ -121,5 +200,31 @@
         border-radius: 50%;
         background-color: white;
         box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.2);
+
+        @include laptop {
+            width: 200px;
+        }
+    }
+}
+
+.people--list__second-line {
+    @include laptop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+}
+
+.people--list__items-container-first {
+    @include laptop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &>.people--list__items {
+            gap: 3rem;
+        }
     }
 }

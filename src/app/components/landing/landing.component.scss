@@ -1,18 +1,131 @@
+@use '../../../styles/index' as *;
+
 .landing__content {
     height: 380px;
-    background: #7c5d6347;
+    background: rgba(246, 223, 216, 0.5);
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
 
     & span {
+        padding: 2rem 0 0 0;
         font-family: "bickham-script-pro-3", sans-serif;
         font-weight: 400;
         font-style: normal;
-        font-size: 2.5rem;
+        font-size: 3rem;
         display: inline-block;
         width: 100%;
         text-align: center;
-        margin-top: 1rem;
+        position: relative;
+        line-height: 2rem;
+        color: map-get($map: $colors, $key: primary-font-color);
     }
 
+    &--petno1 {
+        opacity: 60%;
+        object-fit: cover;
+        position: absolute;
+
+        width: 200px;
+        height: 200px;
+        top: 0;
+        right: 0;
+        transform: rotate(272deg);
+    }
+
+    &--petno2 {
+        @extend .landing__content--petno1;
+        right: -55px;
+    }
+
+    &--petno-lqvo1 {
+        @extend .landing__content--petno1;
+        left: 0;
+        right: auto;
+        top: 0;
+        bottom: auto;
+        transform: rotate(180deg);
+        width: 250px;
+        height: 250px;
+    }
+
+    &--petno-lqvo2 {
+        @extend .landing__content--petno-lqvo1;
+        transform: rotate(0deg);
+        width: 200px;
+        height: 200px;
+    }
+
+    &--petno-centralno {
+        @extend .landing__content--petno-lqvo2;
+        transform: rotate(300deg);
+        left: 210px;
+        top: -85px;
+        opacity: 25%;
+    }
+
+    &--flower {
+        object-fit: cover;
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        top: 115px;
+        right: 0px;
+        opacity: 85%;
+        transform: rotate(105deg);
+    }
+
+    &--petno-dolu-lqvo1 {
+        object-fit: cover;
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        bottom: -40px;
+        left: 15px;
+        opacity: 60%;
+        transform: rotate(300deg);
+    }
+
+    &--flower2 {
+        @extend .landing__content--flower;
+        top: auto;
+        bottom: -75px;
+        left: -15px;
+        width: 250px;
+        height: 250px;
+        transform: rotate(270deg);
+
+    }
+
+    &--klonche {
+        object-fit: cover;
+        position: absolute;
+        opacity: 80%;
+        width: 200px;
+        height: 200px;
+        bottom: -60px;
+        left: -90px;
+        z-index: 5;
+        transform: rotate(90deg);
+    }
+
+    &--petno-dolu-dqsno1 {
+        object-fit: cover;
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        bottom: 0;
+        right: 0;
+    }
+
+    &--klonche-dqsno {
+        @extend .landing__content--klonche;
+        opacity: 100%;
+        left: auto;
+        right: -50px;
+        transform: rotate(353deg);
+        bottom: -85px;
+    }
 
 }
 
@@ -20,13 +133,13 @@
     position: relative;
     width: 100%;
     height: 80%;
-    bottom: 5%;
+
     & img {
+        max-width: 400px;
         height: 100%;
         width: 100%;
         object-fit: contain;
         position: absolute;
-        bottom: 5%;
         left: 50%;
         transform: translateX(-50%);
     }

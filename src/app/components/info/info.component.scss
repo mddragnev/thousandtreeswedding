@@ -1,7 +1,48 @@
 @use '../../../styles/index' as *;
 
+:host {
+    position: relative;
+    z-index: 5;
+}
+
 .info--container {
-    margin-top: 1rem;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+
+    &__petno1 {
+        object-fit: cover;
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        top: 100px;
+        right: -45px;
+        opacity: 50%;
+        transform: rotate(180deg);
+    }
+
+    &__cvete1 {
+        object-fit: cover;
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        top: 176px;
+        right: -173px;
+        transform: rotate(300deg);
+    }
+
+    &__cvete2 {
+        @extend .info--container__cvete1;
+        top: 45%;
+        right: auto;
+        left: -125px;
+        height: 350px;
+        width: 350px;
+        opacity: 80%;
+        transform: rotate(45deg);
+    }
+
+
 }
 
 .info--title {
@@ -21,4 +62,29 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    position: relative;
+    z-index: 2;
 }
+
+.info--container__petno2 {
+    object-fit: cover;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    bottom: 0px;
+    left: -150px;
+    opacity: 50%;
+    transform: rotate(180deg);
+}
+
+.info--container__cvete3 {
+    object-fit: cover;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    bottom: 0px;
+    left: -140px;
+    transform: rotate(320deg);
+    opacity: 70%;
+}
+

@@ -21,10 +21,6 @@ export class HeaderComponent implements OnInit {
       link: "#program"
     },
     {
-      name: "ПОТВЪРЖДЕНИЕ",
-      link: "#form"
-    },
-    {
       name: "КУМОВЕ И ШАФЕРИ",
       link: "#ppl"
     },
@@ -41,8 +37,12 @@ export class HeaderComponent implements OnInit {
       link: "#info"
     },
     {
+      name: "ПОТВЪРЖДЕНИЕ",
+      link: "#form"
+    },
+    {
       name: "КОНТАКТИ",
-      link: "#contancts"
+      link: "#contacts"
     }
   ];
 

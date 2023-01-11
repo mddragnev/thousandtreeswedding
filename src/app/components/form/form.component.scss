@@ -2,11 +2,21 @@
 
 .form__container {
     padding: 1.5rem 1.2rem 1.5rem 1.2rem;
-    background: map-get($map: $colors, $key: primary-font-color);
-    box-shadow: 0 -8px 12px 0px #b1b9b9, 0 8px 12px 0px #b1b9b9;
+    background: white;
+    box-shadow: 0 9px 7px 0px #b1b9b9;
+    font-family: "quasimoda", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0 0 1rem 1rem;
 
     &--content {
-        background: white;
+        overflow: hidden;
+        position: relative;
+        border-radius: 15px;
+        background: map-get($map: $colors, $key: primary-font-color);
+        color: white;
         padding: 1rem;
         display: flex;
         flex-direction: column;
@@ -18,19 +28,26 @@
         }
 
         & h2 {
-            color: map-get($map: $colors, $key: primary-darker);
             font-size: 1.2rem;
-            font-style: italic;
         }
     }
 
     &--date {
         & h3 {
-            color: map-get($map: $colors, $key: primary);
-            font-size: 1rem;
+            font-size: 1.2rem;
             margin: 0;
+            text-align: center;
+            font-weight: 500;
         }
 
+        & h4 {
+            font-size: 1rem;
+            margin: 0;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        width: 80%;
         margin: 0.5rem;
     }
 }
@@ -39,29 +56,56 @@
     margin: 1rem 0 2rem 0;
     font-size: 2rem;
     text-align: center;
-    font-family: "quasimoda", sans-serif;
+    color: map-get($map: $colors, $key: primary-font-color);
+    position: relative;
+}
+
+.form__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#subtitle {
+    text-align: center;
+    color: map-get($map: $colors, $key: primary-font-color);
     font-weight: 300;
-    font-style: normal;
-    color: white;
+    width: 90%;
+    font-size: 1.2rem;
 }
 
 .form {
     display: grid;
     padding: 1rem;
+    justify-items: center;
     grid-row-gap: 0.5rem;
+    z-index: 10;
 
-    & label {}
+    & label[for="attendance"] {
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+
+    &__radio {
+        width: 100%;
+    }
 }
 
 .igx-radio {
-    color: black;
+    color: white;
+    --empty-color: white;
+    --fill-hover-border-color: white;
+    --fill-color: white;
+    --fill-color-hover: white;
 }
 
 
 .form__inputs--buttons {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    margin-top: 1rem;
 
     & button {
         margin: 0.5rem;
@@ -75,7 +119,9 @@
 .form__inputs--divider {
     width: 100%;
     height: 2px;
-    background: red;
+    // background: red;
+    border: 2px solid #f4978f;
+    border-style: dotted;
     margin-top: 2rem;
 }
 
@@ -95,6 +141,7 @@
     width: 100%;
     margin-top: 1rem;
     display: flex;
+    width: 50%;
 
     & button {
         flex-grow: 1;
@@ -118,13 +165,78 @@
     }
 }
 
-.igx-button--fab {
-    height: 30px;
-    width: 30px;
-    min-width: 2rem;
-    min-height: 2rem;
+#container {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+
+
+.igx-button--outlined {
+    --background: #f4978f;
+    --border-color: #f4978f;
+    --foreground: white;
+    --hover-background: #f4978f;
+    --hover-border-color: #f4978f;
+    --hover-foreground: white;
+    --active-background: #f4978f;
+    --active-border-color: #f4978f;
+    --active-foreground: white;
+    --focus-background: #f4978f;
+    --focus-border-color: #f4978f;
+    --focus-foreground: white;
+
 }
 
 .igx-button--disabled {
     background: var(--disabled-background);
+    color: var(--disabled-foreground);
+    border-color: var(--disabled-border-color);
+    pointer-events: none;
+    box-shadow: none;
+}
+
+
+.igx-input-group {
+    --idle-bottom-line-color: white;
+    --idle-text-color: white;
+    --filled-text-color: white;
+    --hover-bottom-line-color: white;
+    --focused-text-color: white;
+    --interim-bottom-line-color: white;
+    --focused-secondary-color: white;
+    --box-backgroud: white;
+    --success-secondary-color: white;
+    --error-secondary-color: #d20505;
+}
+
+.form__container--cvete {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: -70px;
+    left: -90px;
+    transform: rotate(157deg);
+    z-index: 5;
+}
+
+.form__container--cvete2 {
+    @extend .form__container--cvete;
+    top: auto;
+    left: auto;
+    transform: rotate(344deg);
+    bottom: -45px;
+    right: -55px;
+}
+
+.form--cvete3 {
+    object-fit: cover;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: -10px;
+    right: -160px;
+    transform: rotate(90deg);
+    opacity: 70%;
 }

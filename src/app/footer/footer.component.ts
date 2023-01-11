@@ -16,10 +16,6 @@ export class FooterComponent implements OnInit {
       link: "#program"
     },
     {
-      name: "Потвърждение",
-      link: "#form"
-    },
-    {
       name: "Кумове и шафери",
       link: "#ppl"
     },
@@ -36,8 +32,12 @@ export class FooterComponent implements OnInit {
       link: "#info"
     },
     {
+      name: "Потвърждение",
+      link: "#form"
+    },
+    {
       name: "Контакти",
-      link: "contancts"
+      link: "#contacts"
     }
   ];
 

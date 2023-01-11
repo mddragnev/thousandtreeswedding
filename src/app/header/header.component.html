@@ -1,12 +1,34 @@
 <div class="backdrop" [ngClass]="{'open__backdrop': isOpen}" (click)="closeMobileNav()"></div>
 
 <header>
+    <img appImgLoadingDirective class="main-header__cvete" src="../../assets/images/flower.png">
     <div class="main-header__menu">
         <a (click)="openMobileNav()">
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined menu-color">
                 menu
             </span>
         </a>
+    </div>
+    <div class="main-header__navigation">
+        <ul class="nav__list">
+            <!-- <li class="nav__list--item" *ngFor="let item of mobileNavItems">
+                <a href="{{item.link}}">{{item.name}}</a>
+            </li> -->
+            <li class="nav__list--item"><a href="#home">НАЧАЛО</a></li>
+            <li class="nav__list--item"><a href="#program">ПРОГРАМА</a></li>
+            <li class="nav__list--item"><a href="#ppl">КУМОВЕ И ШАФЕРИ</a></li>
+            <li class="nav__list--item"><a href="#cause">ЗА КАУЗАТА</a></li>
+            <li class="nav__list--item">
+                <div class="main-header__logo-inside" [routerLink]="['/home']"> </div>
+            </li>
+
+            <li class="nav__list--item"><a href="#place">ЗА МЯСТОТО</a></li>
+            <li class="nav__list--item"><a href="#info">ПОЛЕЗНА ИНФОРМАЦИЯ</a></li>
+            <li class="nav__list--item"><a href="#form">ПОТВЪРЖДЕНИЕ</a></li>
+            <li class="nav__list--item"><a href="#contacts">КОНТАКТИ</a></li>
+
+        </ul>
+
     </div>
     <div class="main-header__logo" [routerLink]="['/home']">
     </div>

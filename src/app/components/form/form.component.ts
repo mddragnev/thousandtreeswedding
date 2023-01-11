@@ -1,5 +1,5 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { atcb_init } from 'add-to-calendar-button';
 import { RadioGroupAlignment } from 'igniteui-angular';
 import { PeopleService } from 'src/app/services/people.service';
@@ -10,7 +10,6 @@ import { PeopleService } from 'src/app/services/people.service';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit, AfterViewInit {
-
   private _attendance: string = '';
   public alignment = RadioGroupAlignment.horizontal;
   public info: string = '';
@@ -42,8 +41,6 @@ export class FormComponent implements OnInit, AfterViewInit {
 
   public phone!: string;
 
-  public form!: FormGroup;
-
   constructor(private service: PeopleService) {
   }
 
@@ -51,6 +48,10 @@ export class FormComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+  }
+
+  public get shouldDisable(): boolean {
+    return this.inputs.length <= 1;
   }
 
   public addRow() {
@@ -81,7 +82,7 @@ export class FormComponent implements OnInit, AfterViewInit {
     window.location.href = window.location.origin + '#form';
     setTimeout(() => {
       atcb_init();
-    },0)
+    }, 0)
   }
 
   //plus - Добави следващ присъстващ.

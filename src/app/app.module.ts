@@ -1,4 +1,4 @@
-import { Injectable, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Injectable, NgModule } from '@angular/core';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import * as Hammer from 'hammerjs';
 import { AppComponent } from './app.component';
@@ -6,7 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { HomeSectionComponent } from './main/home-section/home-section.component';
 import { CountDownComponent } from './main/count-down/count-down.component';
-import { IgxButtonModule, IgxCardModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxSelectModule } from 'igniteui-angular';
+import { IgxButtonModule, IgxCardModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxSelectModule, IgxTooltipModule } from 'igniteui-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CarouselComponent } from './components/carousel/carousel.component';
@@ -28,7 +28,8 @@ import { InfoComponentComponent } from './components/info-component/info-compone
 import { PeopleComponent } from './components/people/people.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
-
+import {NgxSpinnerModule} from 'ngx-spinner';
+import { ImgLoadingDirective } from './services/img-loading-directive.directive';
 
 
 const routes: Routes = [
@@ -70,6 +71,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     PeopleComponent,
     ContactComponent,
     FooterComponent,
+    ImgLoadingDirective,
   ],
   imports: [
     BrowserModule,
@@ -82,8 +84,10 @@ export class MyHammerConfig extends HammerGestureConfig {
     IgxIconModule,
     IgxButtonModule,
     IgxSelectModule,
+    IgxTooltipModule,
     IgxGridModule,
     HammerModule,
+    NgxSpinnerModule,
     RouterModule.forRoot(routes),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
@@ -95,6 +99,7 @@ export class MyHammerConfig extends HammerGestureConfig {
       useClass: MyHammerConfig,
     }
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
