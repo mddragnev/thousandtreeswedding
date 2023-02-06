@@ -1,3 +1,5 @@
+<img class="carousel-cvete" src="../../../assets/images/flower.png" loading="lazy">
+
 <div *ngIf="images && images.length > 0 || cards" class="carousel-container" (swipeleft)="onNextClick()" (swiperight)="onPrevClick()">
     <img *ngFor="let img of images; let i=index" src="{{img.imageSrc}}" alt="img.imageAlt"
         [ngClass]="{'image-active': selectedIndex === i}" class="fade" loading="lazy">
@@ -28,5 +30,6 @@
             chevron_right
         </span>
     </button>
+    <img class="carousel-petno" src="../../../assets/images/petno-cqlo1.png" loading="lazy">
 
 </div>

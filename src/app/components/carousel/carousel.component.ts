@@ -22,8 +22,6 @@ export class CarouselComponent implements OnInit {
   @Input() cards = false;
   @Input() texts: string[] = [];
 
-  // @ContentChildren(CardComponent) cardItems!: QueryList<CardComponent>;
-
   public selectedIndex = 0;
 
   constructor() { }

@@ -29,6 +29,10 @@
         top: 176px;
         right: -173px;
         transform: rotate(300deg);
+
+        @include laptop {
+            right: -100px
+        }
     }
 
     &__cvete2 {
@@ -40,6 +44,10 @@
         width: 350px;
         opacity: 80%;
         transform: rotate(45deg);
+        @include computer {
+            top: 0;
+            transform: rotate(80deg);
+        }
     }
 
 
@@ -58,7 +66,8 @@
 .info--items {
     margin-top: 2rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -75,6 +84,12 @@
     left: -150px;
     opacity: 50%;
     transform: rotate(180deg);
+    @include computer {
+        width: 500px;
+        height: 500px;
+        bottom: -95px;
+        transform: rotate(60deg);
+    }
 }
 
 .info--container__cvete3 {
@@ -86,5 +101,9 @@
     left: -140px;
     transform: rotate(320deg);
     opacity: 70%;
+
+    @include computer {
+        bottom: -35px;
+    }
 }
 

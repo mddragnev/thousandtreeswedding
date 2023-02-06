@@ -4,7 +4,6 @@ import * as Hammer from 'hammerjs';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
-import { HomeSectionComponent } from './main/home-section/home-section.component';
 import { CountDownComponent } from './main/count-down/count-down.component';
 import { IgxButtonModule, IgxCardModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxProgressBarModule, IgxRadioModule, IgxSelectModule, IgxTooltipModule } from 'igniteui-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -56,7 +55,6 @@ export class MyHammerConfig extends HammerGestureConfig {
     AppComponent,
     HeaderComponent,
     MainComponent,
-    HomeSectionComponent,
     CountDownComponent,
     CarouselComponent,
     CardComponent,

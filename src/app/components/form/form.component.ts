@@ -1,5 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { atcb_init } from 'add-to-calendar-button';
 import { RadioGroupAlignment } from 'igniteui-angular';
 import { PeopleService } from 'src/app/services/people.service';
@@ -84,9 +83,5 @@ export class FormComponent implements OnInit, AfterViewInit {
       atcb_init();
     }, 0)
   }
-
-  //plus - Добави следващ присъстващ.
-  //minus - Премахни последен присъстващ.
-
 
 }

@@ -141,11 +141,6 @@
     color: white;
     position: relative;
 
-    @include laptop {
-        font-size: 4rem;
-
-    }
-
 }
 
 .people--list {
@@ -180,7 +175,6 @@
 
         @include laptop {
             padding: 1rem;
-            font-size: 5rem;
         }
     }
 }

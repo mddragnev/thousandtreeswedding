@@ -1,6 +1,10 @@
+@use '../../../styles/index' as *;
+:host {
+    position: relative;
+}
 .carousel-container {
     position: relative;
-    display:flex;
+    display: flex;
     flex-direction: column;
     overflow: hidden;
     // margin: auto;
@@ -9,7 +13,15 @@
     border-radius: 15px;
     box-shadow: 0 8px 16px #dce1e1;
     touch-action: pan-y !important;
-    
+
+    @include laptop {
+        width: 50%;
+        margin: 2rem auto;
+    }
+
+    @include computer {
+        width: 38%;
+    }
 }
 
 .carousel-container img {
@@ -22,7 +34,7 @@
     display: block;
     width: 100%;
     height: 400px;
-} 
+}
 
 .fade {
     animation-name: fade;
@@ -129,4 +141,38 @@ app-card {
 .dot:hover,
 .dot-cards:hover {
     opacity: 1;
+}
+
+
+.carousel-petno {
+    display: none;
+
+    @include computer {
+        display: block !important;
+        object-fit: cover;
+        position: absolute;
+        opacity: 40%;
+        right: -45px;
+        top: 0;
+        width: 500px;
+        height: 500px;
+        transform: rotate(75deg);
+        z-index: -1;
+    }
+}
+
+.carousel-cvete {
+    display: none;
+
+    @include computer {
+        display: block !important;
+        object-fit: cover;
+        position: absolute;
+        opacity: 50%;
+        right: -45px;
+        top: 0;
+        width: 450px;
+        height: 450px;
+        transform: rotate(330deg);
+    }
 }

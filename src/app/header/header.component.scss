@@ -104,7 +104,7 @@ header {
 }
 
 .nav__list--item {
-    // display: inline-block;
+    font-size: 1rem;
 }
 
 .main-header__logo-inside {
@@ -157,6 +157,10 @@ header {
     width: 80%;
     height: 100%;
     overflow: auto;
+
+    @include laptop {
+        width: 40%;
+    }
 
 
     &__container--slogan {

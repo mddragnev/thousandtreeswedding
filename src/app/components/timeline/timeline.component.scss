@@ -1,5 +1,9 @@
 @use '../../../styles/index' as *;
 
+.content-container {
+  width: 100%;
+}
+
 .timeline {
   position: relative;
   width: 100%;
@@ -25,14 +29,26 @@
   margin-bottom: 0.3rem;
 }
 
-.date::after {
+.container.left .date::after {
   content: '';
   position: absolute;
   width: 2px;
-  background: rgba(0,0,0,0.7);;
+  background: rgba(0, 0, 0, 0.7);
+  ;
   top: 27.2%;
   bottom: -171%;
-  left: 50%;
+  left: -30%;
+}
+
+.container.right .date::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: rgba(0, 0, 0, 0.7);
+  ;
+  top: 27.2%;
+  bottom: -171%;
+  left: 137%;
 }
 
 .timeline__header {
@@ -65,13 +81,14 @@
   top: calc(50% - 8px);
   right: -8px;
   background: #ffffff;
-  border: 2px solid rgba(0,0,0,0.7);;
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  ;
   border-radius: 16px;
   z-index: 1;
 }
 
 .container.right::after {
-  left: -8px;
+  left: -12px;
 }
 
 .container::before {
@@ -81,7 +98,7 @@
   height: 2px;
   top: calc(50% - 1px);
   right: 8px;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
 
@@ -120,7 +137,7 @@
 }
 
 .container.right .date {
-  left: -75px;
+  left: -85px;
 }
 
 .container .icon {
@@ -164,29 +181,40 @@
   font-size: 18px;
   color: white;
   font-weight: 600;
+  @include computer {
+    font-size: 1.3rem;
+  }
 }
 
 
 
 .container .content p {
   margin: 0;
-  font-size: 16px;
   line-height: 22px;
-  color: #000000;
+  color: white;
 }
 
 .content a {
   color: black;
   text-decoration: none;
+}
 
-  &:hover {
-    text-decoration: underline;
+.container.left .content,
+.container.right .content {
+  & button {
+    --background: #f4978f;
+    // --foreground: white;
+    margin-top: 1rem;
+    &>a {
+      color: white;
+    }
+
   }
 }
 
 @media (max-width: 767.98px) {
   .date::after {
-    left: 80px;
+    left: 80px !important;
   }
 
   .container {
@@ -207,7 +235,7 @@
   .container.left::before,
   .container.right::before {
     left: 98px;
-    border-color: transparent rgba(0,0,0,0.7) transparent transparent;
+    border-color: transparent rgba(0, 0, 0, 0.7) transparent transparent;
   }
 
   .container.left .date,
@@ -246,20 +274,18 @@
       color: white
     }
 
+
     & button {
-      --background: #f4978f;
-      // --foreground: white;
       margin-bottom: 1rem;
       margin-left: 1rem;
-      & > a {
-        color: white;
-      }
     }
+
 
     // padding: 30px 30px 30px 100px;
     border-radius: 500px 30px 30px 500px;
   }
 }
+
 
 .igx-button--raised {
 

@@ -30,17 +30,4 @@ export class AppComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
-  // @HostListener('window:load', ['$event'])
-  // public onWindowsLoad() {
-
-  //   setTimeout(() => {
-  //     this.spinner.hide();
-  //     document.getElementById('start')?.classList.remove('hide');
-  //     document.getElementById('start')?.classList.add('show');
-  //   }, 500)
-  //   // this.spinner.hide();
-  //   // document.getElementById('start')?.classList.remove('hide');
-  //   // document.getElementById('start')?.classList.add('show');
-  //   // console.log("loaded");
-  // }
 }

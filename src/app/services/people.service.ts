@@ -25,7 +25,7 @@ export class PeopleService {
   public async save(data: any): Promise<any> {
     const response: any = await firstValueFrom(this.getAll());
 
-    const group = Math.max(...(response.map((x: any) => x.group))) + 1;
+    const group = response.length >= 1 ? Math.max(...(response.map((x: any) => x.group))) + 1 : 1;
     data.forEach((obj: any) => {
       obj['group'] = group;
       addDoc(this.db, obj)

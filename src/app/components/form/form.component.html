@@ -1,5 +1,4 @@
 <div class="form__container">
-    <!-- <div class="form--cvete3"></div> -->
     <img class="form--cvete3" src="../../../assets/images/flower.png" loading="lazy">
 
 
@@ -13,11 +12,11 @@
         <h2 id="subtitle" s>Скъпи гости, молим, потвърдете вашето присъствие, като попълните нашата сватбена форма.</h2>
 
         <div class="form__container--content">
-            <!-- <div *ngIf="!this.submitted" class="form__container--cvete"></div> -->
-            <img *ngIf="!this.submitted" class="form__container--cvete" src="../../../assets/images/klonche.png" loading="lazy">
+            <img *ngIf="!this.submitted" class="form__container--cvete" src="../../../assets/images/klonche.png"
+                loading="lazy">
 
-            <!-- <div *ngIf="!this.submitted" class="form__container--cvete2"></div> -->
-            <img *ngIf="!this.submitted" class="form__container--cvete2" src="../../../assets/images/klonche.png" loading="lazy">
+            <img *ngIf="!this.submitted" class="form__container--cvete2" src="../../../assets/images/klonche.png"
+                loading="lazy">
 
             <div class="form__container--date">
                 <h3>Дата на събитието: </h3>
@@ -30,35 +29,42 @@
 
             <form class="form" id="form" #form="ngForm" (ngSubmit)="submit()">
                 <label for="attendance">Ще присъствате ли на сватбеното тържество на Силвана и Радослав?</label>
-                <div class="form__radio">
-                    <igx-radio [(ngModel)]="attendance" [value]='"true"' name="attendance-yes">Да, с удоволствие ще
-                        присъстваме.
-                    </igx-radio>
-                </div>
-                <div class="form__radio">
-                    <igx-radio [(ngModel)]="attendance" [value]='"false"' name="attendance-no">Не, за съжаление, няма да
-                        присъстваме.</igx-radio>
+                <div class="form__radio--container">
+
+                    <div class="form__radio">
+                        <igx-radio [(ngModel)]="attendance" [value]='"true"' name="attendance-yes">Да, с удоволствие ще
+                            присъстваме.
+                        </igx-radio>
+                    </div>
+                    <div class="form__radio">
+                        <igx-radio [(ngModel)]="attendance" [value]='"false"' name="attendance-no">Не, за съжаление,
+                            няма да
+                            присъстваме.</igx-radio>
+                    </div>
                 </div>
 
                 <div *ngIf="attendance === 'false'" id="container">
                     <span>Няма да присъстват:</span>
                     <section *ngFor="let input of inputs; let i = index">
                         <div *ngIf="this.inputs.length > 1 && i !==0" class="form__inputs--divider"></div>
+                        <div class="form__name-group">
 
-                        <igx-input-group>
-                            <input igxInput name="firstName{{i}}" type="text" [(ngModel)]="input.firstName" required />
-                            <label igxLabel for="firstName{{i}}">Име</label>
-                            <igx-hint position="start" style="font-size:0.7rem">Задължително поле</igx-hint>
+                            <igx-input-group>
+                                <input igxInput name="firstName{{i}}" type="text" [(ngModel)]="input.firstName"
+                                    required />
+                                <label igxLabel for="firstName{{i}}">Име</label>
+                                <igx-hint position="start" style="font-size:0.7rem">Задължително поле</igx-hint>
 
-                        </igx-input-group>
+                            </igx-input-group>
 
-                        <igx-input-group>
-                            <input igxInput name="secondName{{i}}" type="text" [(ngModel)]="input.secondName"
-                                required />
-                            <label igxLabel for="secondName{{i}}">Фамилия</label>
-                            <igx-hint position="start" style="font-size:0.7rem">Задължително поле</igx-hint>
+                            <igx-input-group>
+                                <input igxInput name="secondName{{i}}" type="text" [(ngModel)]="input.secondName"
+                                    required />
+                                <label igxLabel for="secondName{{i}}">Фамилия</label>
+                                <igx-hint position="start" style="font-size:0.7rem">Задължително поле</igx-hint>
 
-                        </igx-input-group>
+                            </igx-input-group>
+                        </div>
 
                     </section>
                     <div class="form__inputs--buttons">
@@ -97,30 +103,31 @@
                                     Дете
                                 </igx-radio>
                             </igx-radio-group>
-                            
+
                         </div>
-                        <igx-input-group>
-                            <input igxInput name="firstName{{i}}" type="text" [(ngModel)]="input.firstName"
-                                required="required" />
-                            <label igxLabel for="firstName{{i}}">Име</label>
-                            <igx-hint position="start" style="font-size:0.7rem">Задължително поле</igx-hint>
-                        </igx-input-group>
+                        <div class="form__name-group">
+                            <igx-input-group>
+                                <input igxInput name="firstName{{i}}" type="text" [(ngModel)]="input.firstName"
+                                    required="required" />
+                                <label igxLabel for="firstName{{i}}">Име</label>
+                                <igx-hint position="start" style="font-size:0.7rem">Задължително поле</igx-hint>
+                            </igx-input-group>
 
-                        <igx-input-group>
-                            <input igxInput name="secondName{{i}}" type="text" [(ngModel)]="input.secondName"
-                                required />
-                            <label igxLabel for="secondName{{i}}">Фамилия</label>
-                            <igx-hint position="start" style="font-size:0.7rem">Задължително поле</igx-hint>
-                        </igx-input-group>
-
+                            <igx-input-group>
+                                <input igxInput name="secondName{{i}}" type="text" [(ngModel)]="input.secondName"
+                                    required />
+                                <label igxLabel for="secondName{{i}}">Фамилия</label>
+                                <igx-hint position="start" style="font-size:0.7rem">Задължително поле</igx-hint>
+                            </igx-input-group>
+                        </div>
                         <div class="form__food">
 
                             <span> Специфични изисквания за храна: </span>
                             <div class="form__food--radio">
                                 <div *ngIf="input.age === 'Възрастен'" class="form__food--radio-container">
-                                    <igx-radio [(ngModel)]="input.food" value='Нямам специфични изисквания'
+                                    <igx-radio [(ngModel)]="input.food" value='Без специфични изисквания'
                                         name="food-all{{i}}">
-                                        Нямам специфични изисквания</igx-radio>
+                                        Без специфични изисквания</igx-radio>
                                     <igx-radio [(ngModel)]="input.food" value='Вегетарианско меню'
                                         name="food-vegan{{i}}">
                                         Вегетарианско меню</igx-radio>
