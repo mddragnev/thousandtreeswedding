@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { atcb_init } from 'add-to-calendar-button';
 import { RadioGroupAlignment } from 'igniteui-angular';
 import { PeopleService } from 'src/app/services/people.service';
 
@@ -80,9 +79,6 @@ export class FormComponent implements OnInit, AfterViewInit {
 
     this.submitted = true;
     window.location.href = window.location.origin + '#form';
-    setTimeout(() => {
-      atcb_init();
-    }, 0)
   }
 
 }

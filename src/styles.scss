@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @use 'igniteui-angular/theming' as *;
 @use '../src/styles/index' as *;
-@import 'add-to-calendar-button/assets/css/atcb.css';
 
 
 
@@ -10,9 +9,9 @@
 @include theme($palette: $palette,
     $schema: $schema);
 
-:root {
-    @include palette-vars($palette);
-}
+// :root {
+//     @include css-vars($palette);
+// }
 
 $custom-radio-theme: radio-theme(
     $disabled-color: lightgray,
@@ -29,7 +28,6 @@ $custom-input-group: input-group-theme(
   $focused-text-color: #174f30,
   $idle-text-color: #288a54,
   $idle-bottom-line-color: #288a54,
-  $interim-bottom-line-color: #288a54,
   $hover-bottom-line-color: #288a54,
   $focused-secondary-color: #174f30,
   $box-background: #eeeeee
@@ -39,7 +37,6 @@ $custom-input-group: input-group-theme(
 
 $custom-theme-progress: progress-circular-theme(
     $base-circle-color: #9d9a9a,
-    $progress-circle-color: white
 );
 @include css-vars($custom-theme-progress);
 
