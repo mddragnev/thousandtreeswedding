@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-place',
-  templateUrl: './place.component.html',
-  styleUrls: ['./place.component.scss']
+    selector: 'app-place',
+    templateUrl: './place.component.html',
+    styleUrls: ['./place.component.scss'],
+    standalone: false
 })
 export class PlaceComponent implements OnInit {
 

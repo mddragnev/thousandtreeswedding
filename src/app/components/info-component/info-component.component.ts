@@ -2,9 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 
 
 @Component({
-  selector: 'app-info-component',
-  templateUrl: './info-component.component.html',
-  styleUrls: ['./info-component.component.scss']
+    selector: 'app-info-component',
+    templateUrl: './info-component.component.html',
+    styleUrls: ['./info-component.component.scss'],
+    standalone: false
 })
 export class InfoComponentComponent implements OnInit {
 

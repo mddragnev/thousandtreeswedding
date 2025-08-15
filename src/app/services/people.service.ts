@@ -15,7 +15,7 @@ export class PeopleService {
   }
 
   public getAll(): any {
-    return collectionSnapshots(this.db).pipe(map(res => res.map(data => {
+    return collectionSnapshots(this.db).pipe(map((res:any) => res.map((data:any) => {
       const id = data.id;
       const docData = data.data();
       return { ...docData, id };

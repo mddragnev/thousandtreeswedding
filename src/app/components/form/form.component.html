@@ -1,5 +1,5 @@
 <div class="form__container">
-    <img class="form--cvete3" src="../../../assets/images/flower.png" loading="lazy">
+    <img class="form--cvete3" src="assets/images/flower.png" loading="lazy">
 
 
     <div class="form__header">
@@ -12,10 +12,10 @@
         <h2 id="subtitle" s>Скъпи гости, молим, потвърдете вашето присъствие, като попълните нашата сватбена форма.</h2>
 
         <div class="form__container--content">
-            <img *ngIf="!this.submitted" class="form__container--cvete" src="../../../assets/images/klonche.png"
+            <img *ngIf="!this.submitted" class="form__container--cvete" src="assets/images/klonche.png"
                 loading="lazy">
 
-            <img *ngIf="!this.submitted" class="form__container--cvete2" src="../../../assets/images/klonche.png"
+            <img *ngIf="!this.submitted" class="form__container--cvete2" src="assets/images/klonche.png"
                 loading="lazy">
 
             <div class="form__container--date">
@@ -190,7 +190,7 @@
 
     <div *ngIf="this.submitted" class="form__container--content">
         <h2>Благодарим ви, че попълнихте нашата сватбена форма!</h2>
-        <div *ngIf="this.attendance !== 'false'" class="atcb" style="display:none;">
+        <!-- <div *ngIf="this.attendance !== 'false'" class="atcb" style="display:none;">
             {{ '{' }}
             "name":"Сватбата на Силвана и Радослав",
             "description":"Сватбата на Силвана и Радослав",
@@ -209,7 +209,7 @@
             "checkmark":false,
             "iCalFileName":"Reminder-Event"
             {{ '}' }}
-        </div>
+        </div> -->
     </div>
 
 </div>

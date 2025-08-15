@@ -2,7 +2,8 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 import { ImageService } from './image-service.service';
 
 @Directive({
-  selector: '[appImgLoadingDirective]'
+    selector: '[appImgLoadingDirective]',
+    standalone: false
 })
 export class ImgLoadingDirective {
 

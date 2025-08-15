@@ -1,36 +1,77 @@
 <div class="countdown">
-    <img appImgLoadingDirective class="countdown__cvete" src="../../../assets/images/flower.png" loading="lazy">
+  <img
+    appImgLoadingDirective
+    class="countdown__cvete"
+    src="assets/images/flower.png"
+    loading="lazy"
+  />
 
-    <div class="countdown__slogan">
-        Сватбата на Силвана и Радослав
-    </div>
-    <h2 class="countdown__date">15 ЮЛИ 2023</h2>
+  <div class="countdown__slogan">Сватбата на Силвана и Радослав</div>
+  <h2 class="countdown__date">15 ЮЛИ 2023</h2>
 
-    <div class="countdown__timer">
-        <igx-circular-bar [value]="this.percent" [animate]="true" class="countdown__timer--item">
-            <ng-template igxProcessBarText let-process>
-                <svg:tspan x="54" y="3.5rem" [ngClass]="'countdown__timer--item-time'"> {{daysToDday}} </svg:tspan>
-                <svg:tspan [ngClass]="'countdown__timer--item-label'" x="50" dy="20">
-                    ДНИ
-                </svg:tspan>
-            </ng-template>
-        </igx-circular-bar>
-        <igx-circular-bar [value]="this.percent" [animate]="true" class="countdown__timer--item">
-            <ng-template igxProcessBarText let-process>
-                <svg:tspan x="54" y="3.5rem" [ngClass]="'countdown__timer--item-time'"> {{hoursToDday}} </svg:tspan>
-                <svg:tspan [ngClass]="'countdown__timer--item-label'" x="50" dy="20">
-                    ЧАСА
-                </svg:tspan>
-            </ng-template>
-        </igx-circular-bar>
-        <igx-circular-bar [value]="this.percent" [animate]="true" class="countdown__timer--item">
-            <ng-template igxProcessBarText let-process>
-                <svg:tspan x="54" y="3.5rem" [ngClass]="'countdown__timer--item-time'"> {{minutesToDday}} </svg:tspan>
-                <svg:tspan [ngClass]="'countdown__timer--item-label'" x="50" dy="20">
-                    МИН
-                </svg:tspan>
-            </ng-template>
-        </igx-circular-bar>
-    </div>
-
+  <div class="countdown__timer">
+    <igx-circular-bar
+      [value]="this.percent"
+      [animate]="true"
+      class="countdown__timer--item"
+      [text]="daysToDday.toString()"
+    >
+      <ng-template igxProgressBarText let-process>
+        <div style="display:flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div>
+            {{ daysToDday }}
+          </div>
+          <div style="font-size: 0.8rem;">ДНИ</div>
+        </div>
+        <svg:tspan x="54" y="3.5rem" [ngClass]="'countdown__timer--item-time'">
+          {{ daysToDday }}
+        </svg:tspan>
+        <svg:tspan [ngClass]="'countdown__timer--item-label'" x="50" dy="20">
+          ДНИ
+        </svg:tspan>
+      </ng-template>
+    </igx-circular-bar>
+    <igx-circular-bar
+      [value]="this.percent"
+      [animate]="true"
+      class="countdown__timer--item"
+      [text]="hoursToDday.toString()"
+    >
+      <ng-template igxProgressBarText let-process>
+        <div style="display:flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div>
+            {{ hoursToDday }}
+          </div>
+          <div style="font-size: 0.8rem;">ЧАСА</div>
+        </div>
+        <svg:tspan x="54" y="3.5rem" [ngClass]="'countdown__timer--item-time'">
+          {{ hoursToDday }}
+        </svg:tspan>
+        <svg:tspan [ngClass]="'countdown__timer--item-label'" x="50" dy="20">
+          ЧАСА
+        </svg:tspan>
+      </ng-template>
+    </igx-circular-bar>
+    <igx-circular-bar
+      [value]="this.percent"
+      [animate]="true"
+      class="countdown__timer--item"
+      [text]="minutesToDday.toString()"
+    >
+      <ng-template igxProgressBarText let-process>
+        <div style="display:flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div>
+            {{ minutesToDday }}
+          </div>
+          <div style="font-size: 0.8rem;">МИН</div>
+        </div>
+        <svg:tspan x="54" y="3.5rem" [ngClass]="'countdown__timer--item-time'">
+          {{ minutesToDday }}
+        </svg:tspan>
+        <svg:tspan [ngClass]="'countdown__timer--item-label'" x="50" dy="20">
+          МИН
+        </svg:tspan>
+      </ng-template>
+    </igx-circular-bar>
+  </div>
 </div>

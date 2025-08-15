@@ -4,9 +4,10 @@ import { filter, Observable, Subject } from 'rxjs';
 import { ImageService } from './services/image-service.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: false
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'thousandtreeswedding';
