@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-count-down',
-  templateUrl: './count-down.component.html',
-  styleUrls: ['./count-down.component.scss']
+    selector: 'app-count-down',
+    templateUrl: './count-down.component.html',
+    styleUrls: ['./count-down.component.scss'],
+    standalone: false
 })
 export class CountDownComponent implements OnInit {
 

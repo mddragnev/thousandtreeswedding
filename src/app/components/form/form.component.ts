@@ -4,9 +4,10 @@ import { RadioGroupAlignment } from 'igniteui-angular';
 import { PeopleService } from 'src/app/services/people.service';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+    selector: 'app-form',
+    templateUrl: './form.component.html',
+    styleUrls: ['./form.component.scss'],
+    standalone: false
 })
 export class FormComponent implements OnInit, AfterViewInit {
   private _attendance: string = '';

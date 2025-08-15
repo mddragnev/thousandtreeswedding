@@ -44,9 +44,10 @@ class GroupSummary {
 }
 
 @Component({
-  selector: 'app-grid',
-  templateUrl: './grid.component.html',
-  styleUrls: ['./grid.component.scss']
+    selector: 'app-grid',
+    templateUrl: './grid.component.html',
+    styleUrls: ['./grid.component.scss'],
+    standalone: false
 })
 export class GridComponent implements OnInit {
   @ViewChild('grid') public grid!: IgxGridComponent;

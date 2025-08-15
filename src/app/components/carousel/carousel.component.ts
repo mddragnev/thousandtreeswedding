@@ -8,9 +8,10 @@ interface carouselImages {
 }
 
 @Component({
-  selector: 'app-carousel',
-  templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.scss']
+    selector: 'app-carousel',
+    templateUrl: './carousel.component.html',
+    styleUrls: ['./carousel.component.scss'],
+    standalone: false
 })
 export class CarouselComponent implements OnInit {
 
